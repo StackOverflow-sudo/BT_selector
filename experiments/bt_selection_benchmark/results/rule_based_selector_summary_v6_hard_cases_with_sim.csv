@@ -1,0 +1,3 @@
+selector,group_count,selected_symbolic_success_rate,selected_sim_success_rate,selected_sim_success_count,selected_sim_success_coverage,selected_goal_satisfaction,mean_selected_model_score,mean_selected_true_score,mean_oracle_true_score,mean_regret,notes
+rule_based_symbolic,30,1.0,0.333333,30,1.0,1.0,79.733333,96.652486,106.713479,10.060993,Uses BT structure and KIOS symbolic execution metrics only.
+rule_based_simulation,30,1.0,0.433333,30,1.0,1.0,109.445157,106.70016,106.713479,0.013319,Adds available simulation metrics to the symbolic reliability score.

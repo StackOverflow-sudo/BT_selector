@@ -1,0 +1,109 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+secrets.json
+secrets*.json
+**/secrets.json
+**/secrets*.json
+*credentials*
+*api_key*
+
+# Python virtual environments and local dependency bundles
+.venv/
+.venv-*/
+venv/
+venv-*/
+env/
+.codex_vendor/
+
+# Python caches and package artefacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and ROS/catkin artefacts
+build/
+dist/
+install/
+devel/
+log/
+logs/
+.catkin_tools/
+*.o
+*.out
+
+# Experiment tracking and runtime logs
+wandb/
+*.log
+*.pid
+*.lock
+core
+core.*
+
+# Local KIOS runtime state
+query_history/
+**/query_history/
+**/mios_memory_backups/
+
+# Generated Isaac Gym jobs and raw simulation outputs
+experiments/bt_selection_benchmark/simulation_jobs*/
+experiments/gpt_candidate_demo/simulation_jobs/
+experiments/gpt_candidate_demo/outputs/
+experiments/gpt_candidate_demo/single_vs_multi_outputs/
+experiments/gpt_candidate_demo/models/online_v5_test/
+*.pickle
+
+# Generated temporary files
+*.bak
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+/--generator
+/--model
+/v2_run.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.fdb_latexmk
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Office temporary files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# Intentionally retained:
+# - experiments/**/results/ for reproducible CSV, JSON, reports, and figures
+# - experiments/gpt_candidate_demo/models/online_v5/ for deployable weights
+# - PDF/SVG/PNG figures used by the dissertation and README

@@ -1,0 +1,5 @@
+selector,groups,success,mean_selected_true_score,mean_regret
+learned_pairwise,80,0.5375,106.882985375,0.17968106250000188
+symbolic_only,80,0.375,91.14227106249999,15.920395375000002
+shortest_tree,80,0.125,18.4962876875,88.56637875
+oracle,80,0.5375,107.0626664375,0.0

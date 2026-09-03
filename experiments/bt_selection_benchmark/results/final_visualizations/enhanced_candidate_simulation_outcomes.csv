@@ -1,0 +1,5 @@
+benchmark,groups,candidate_rows,sim_success,sim_failure,skipped,pending_or_missing
+V1 supported-by,20,120,46,74,0,0
+V2 stacking probe,40,240,46,194,0,0
+V2B physical strategy,20,120,41,79,0,0
+V6 hard cases,30,180,43,137,0,0

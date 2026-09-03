@@ -1,0 +1,35 @@
+{
+  "task_id": "hard_physical_place_block3_on_block5",
+  "candidates": [
+    {
+      "candidate_id": "stable_center_bt",
+      "candidate_type": "stable_center_bt",
+      "bt_path": "stable_center_bt.json"
+    },
+    {
+      "candidate_id": "symbolic_edge_bt",
+      "candidate_type": "symbolic_edge_bt",
+      "bt_path": "symbolic_edge_bt.json"
+    },
+    {
+      "candidate_id": "symbolic_corner_bt",
+      "candidate_type": "symbolic_corner_bt",
+      "bt_path": "symbolic_corner_bt.json"
+    },
+    {
+      "candidate_id": "unstable_over_edge_bt",
+      "candidate_type": "unstable_over_edge_bt",
+      "bt_path": "unstable_over_edge_bt.json"
+    },
+    {
+      "candidate_id": "collision_far_offset_bt",
+      "candidate_type": "collision_far_offset_bt",
+      "bt_path": "collision_far_offset_bt.json"
+    },
+    {
+      "candidate_id": "missing_precondition_bt",
+      "candidate_type": "missing_precondition_bt",
+      "bt_path": "missing_precondition_bt.json"
+    }
+  ]
+}

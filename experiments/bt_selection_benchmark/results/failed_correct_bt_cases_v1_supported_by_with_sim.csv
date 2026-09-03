@@ -1,0 +1,5 @@
+task_id,initial_state_id,target_predicate,moved_object,support_object,symbolic_success,sim_success,final_position_error,object_displacement_error,contact_violation_proxy,score
+stack_block3_on_block1,state_000_t0,"supported_by(block_3, block_1)",block_3,block_1,1,0,0.079779,0.548682,1,64.104846
+stack_block3_on_block1,state_002_t2,"supported_by(block_3, block_1)",block_3,block_1,1,0,0.089849,0.620543,1,63.860424
+stack_block3_on_block1,state_003_t3,"supported_by(block_3, block_1)",block_3,block_1,1,0,0.092335,0.632041,1,63.812568
+stack_block3_on_block1,state_004_t4,"supported_by(block_3, block_1)",block_3,block_1,1,0,0.085926,0.614936,1,63.910868

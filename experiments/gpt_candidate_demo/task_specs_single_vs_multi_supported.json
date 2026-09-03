@@ -1,0 +1,54 @@
+{
+  "tasks": [
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "instruction": "place block_3 on block_5 with physically stable placement",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {
+          "name": "supported_by",
+          "source": "block_3",
+          "target": "block_5"
+        }
+      ],
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "symbolic_success_physical_failure",
+      "candidate_types": [
+        "stable_center_bt",
+        "symbolic_edge_bt",
+        "symbolic_corner_bt",
+        "unstable_over_edge_bt",
+        "collision_far_offset_bt",
+        "missing_precondition_bt"
+      ],
+      "notes": "Several candidates are symbolically valid supported_by plans but use unstable or risky placement offsets."
+    },
+    {
+      "task_id": "hard_physical_place_block1_on_block5",
+      "instruction": "place block_1 on block_5 with physically stable placement",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {
+          "name": "supported_by",
+          "source": "block_1",
+          "target": "block_5"
+        }
+      ],
+      "moved_object": "block_1",
+      "support_object": "block_5",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "symbolic_success_physical_failure",
+      "candidate_types": [
+        "stable_center_bt",
+        "symbolic_edge_bt",
+        "symbolic_corner_bt",
+        "unstable_over_edge_bt",
+        "collision_far_offset_bt",
+        "missing_precondition_bt"
+      ],
+      "notes": "Physical placement strategy should distinguish center placement from edge and far-offset variants."
+    }
+  ]
+}

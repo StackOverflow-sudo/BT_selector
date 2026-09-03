@@ -1,0 +1,14 @@
+{
+  "result": "success",
+  "output": "experiments/bt_selection_benchmark/results/learned_selector_dataset_v3a.csv",
+  "rows": 660,
+  "groups": 110,
+  "positive_sim_success": 176,
+  "negative_sim_success": 484,
+  "sources": [
+    "v1_supported_by",
+    "v2_stacking_probe",
+    "v2b_physical_strategy",
+    "v6_hard_cases"
+  ]
+}

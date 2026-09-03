@@ -1,0 +1,3964 @@
+{
+  "task": {
+    "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+    "task_id": "hard_physical_place_block3_on_block5",
+    "instruction": "place block_3 on block_5 with physically stable placement",
+    "initial_state_id": "state_000_t0",
+    "target_predicate": "supported_by(block_3, block_5)",
+    "selected_candidate": "stable_center_direct",
+    "selector": "v5_learned_no_simulation"
+  },
+  "generation": {
+    "generator": "existing",
+    "model": "gpt-4.1-mini",
+    "candidate_count": 4,
+    "prompt_path": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/prompt.txt",
+    "raw_response_path": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/raw_response.txt",
+    "prompt": "You are generating multiple candidate Behavior Trees for a robot task-planning selector demo.\n\nTask instruction:\nplace block_3 on block_5 with physically stable placement\n\nTarget predicate:\nsupported_by(block_3, block_5)\n\nInitial symbolic world:\n{\n  \"objects\": [\n    {\n      \"name\": \"block_1\",\n      \"properties\": [\n        \"is_free\",\n        \"is_movable\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": false,\n        \"position\": [\n          0.212969,\n          0.037956,\n          0.042756\n        ],\n        \"extents\": [\n          0.069149,\n          0.07427,\n          0.085512\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.6727254527534758,\n          0.8174260840889399,\n          0.4583616209394291\n        ]\n      }\n    },\n    {\n      \"name\": \"block_2\",\n      \"properties\": [\n        \"is_free\",\n        \"is_movable\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": false,\n        \"position\": [\n          0.264834,\n          -0.22349,\n          0.03794\n        ],\n        \"extents\": [\n          0.063681,\n          0.074339,\n          0.07588\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.6799952725594703,\n          0.5627111641175525,\n          0.7901730450564318\n        ]\n      }\n    },\n    {\n      \"name\": \"block_3\",\n      \"properties\": [\n        \"is_free\",\n        \"is_movable\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": false,\n        \"position\": [\n          0.030156,\n          0.049346,\n          0.037011\n        ],\n        \"extents\": [\n          0.061463,\n          0.073905,\n          0.074023\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.4495198322601104,\n          0.43637720938297075,\n          0.6798439817979555\n        ]\n      }\n    },\n    {\n      \"name\": \"block_4\",\n      \"properties\": [\n        \"is_free\",\n        \"is_movable\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": false,\n        \"position\": [\n          0.261083,\n          0.212919,\n          0.039083\n        ],\n        \"extents\": [\n          0.061485,\n          0.067181,\n          0.078167\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.4639367117849331,\n          0.18315110240075527,\n          0.1742997800415378\n        ]\n      }\n    },\n    {\n      \"name\": \"block_5\",\n      \"properties\": [\n        \"is_environment\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": true,\n        \"position\": [\n          0.5,\n          0.0,\n          0.36\n        ],\n        \"extents\": [\n          0.4,\n          0.4,\n          0.03\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.52,\n          0.49,\n          0.41\n        ]\n      }\n    },\n    {\n      \"name\": \"block_6\",\n      \"properties\": [\n        \"is_environment\"\n      ],\n      \"metadata\": {\n        \"source\": \"points2plans_pickle\",\n        \"fix_base_link\": true,\n        \"position\": [\n          0.5,\n          0.0,\n          0.82\n        ],\n        \"extents\": [\n          0.4,\n          0.4,\n          0.03\n        ],\n        \"object_type\": \"box\",\n        \"asset_filename\": null,\n        \"rgb_color\": [\n          0.52,\n          0.49,\n          0.41\n        ]\n      }\n    }\n  ],\n  \"relations\": [\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_below\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"is_below\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_below\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"is_below\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_below\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"is_below\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_below\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_left_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"is_below\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_above\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_above\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_above\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_above\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_5\",\n      \"name\": \"is_below\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_above\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_in_front_of\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_above\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_above\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_right_of\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_behind\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_above\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_6\",\n      \"name\": \"is_above\",\n      \"target\": \"block_5\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_1\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_3\"\n    },\n    {\n      \"source\": \"block_2\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_3\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_4\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_5\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_inside\",\n      \"target\": \"block_6\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_1\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_2\"\n    },\n    {\n      \"source\": \"block_4\",\n      \"name\": \"can_be_placed_on\",\n      \"target\": \"block_3\"\n    }\n  ]\n}\n\nGenerate exactly 4 diverse candidate BTs. Include at least:\n- one physically stable candidate,\n- one symbolically plausible but physically risky candidate,\n- one candidate with a missing or weak precondition,\n- one redundant or less efficient candidate.\n\nAction and BT format knowledge:\nAvailable action:\n- place(object, support)\n  Preconditions: is_movable(object), can_be_placed_on(object, support)\n  Effects: is_supported_by(object, support), is_above(object, support)\n\nReturn only JSON, no Markdown. Use this schema:\n{\n  \"candidates\": [\n    {\n      \"candidate_id\": \"short_unique_name\",\n      \"rationale\": \"why this BT differs from the others\",\n      \"behavior_tree\": {\n        \"summary\": \"...\",\n        \"name\": \"selector: ...\",\n        \"identifier\": 1,\n        \"type_name\": \"selector\",\n        \"children\": []\n      }\n    }\n  ]\n}\n\nEach behavior_tree should use a selector root with:\n1. a condition branch for the target already being satisfied;\n2. a sequence branch checking preconditions and executing place(object, support).\n\nImportant schema rules:\n- Condition nodes must use \"conditions\", never \"condition\".\n- Condition/effect facts must use object_name, property_name, property_value, status.\n- Do not use predicate/args/value inside conditions or effects.\n- Example condition fact: {\"object_name\": \"block_3\", \"property_name\": \"is_supported_by\", \"property_value\": \"block_5\", \"status\": true}\n- Example action effect fact: {\"object_name\": \"block_3\", \"property_name\": \"is_above\", \"property_value\": \"block_5\", \"status\": true}\n\nFor physical diversity, include placement metadata on action nodes when useful:\n\"metadata\": {\"placement\": {\"strategy\": \"stable_center\", \"target_xy_offset_ratio\": [0.0, 0.0]}}\n",
+    "raw_response": "{\"candidates\":[{\"candidate_id\":\"stable_center_direct\",\"rationale\":\"Physically stable direct placement on the center of the support, with full precondition checks and a clean success shortcut.\",\"behavior_tree\":{\"summary\":\"If block_3 is already supported by block_5, succeed; otherwise verify preconditions and place block_3 stably on the center of block_5.\",\"name\":\"selector: block_3 on block_5 stable center\",\"identifier\":1,\"type_name\":\"selector\",\"children\":[{\"name\":\"sequence: already satisfied\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: target supported_by(block_3, block_5)\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true}]}]},{\"name\":\"sequence: check and place stably\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: block_3 is movable\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_movable\",\"property_value\":true,\"status\":true}]},{\"name\":\"condition: block_3 can be placed on block_5\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"can_be_placed_on\",\"property_value\":\"block_5\",\"status\":true}]},{\"name\":\"action: place block_3 on block_5\",\"type_name\":\"action\",\"metadata\":{\"placement\":{\"strategy\":\"stable_center\",\"target_xy_offset_ratio\":[0.0,0.0]}},\"children\":[],\"effects\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true},{\"object_name\":\"block_3\",\"property_name\":\"is_above\",\"property_value\":\"block_5\",\"status\":true}]}]}]}},{\"candidate_id\":\"edge_offset_risky\",\"rationale\":\"Symbolically valid but physically risky because it uses an edge-biased offset that may reduce stability despite meeting symbolic preconditions.\",\"behavior_tree\":{\"summary\":\"If already supported, do nothing; otherwise check preconditions and place block_3 near an edge of block_5.\",\"name\":\"selector: block_3 on block_5 edge-biased\",\"identifier\":2,\"type_name\":\"selector\",\"children\":[{\"name\":\"sequence: already satisfied\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: target supported_by(block_3, block_5)\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true}]}]},{\"name\":\"sequence: check and place with risky offset\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: block_3 is movable\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_movable\",\"property_value\":true,\"status\":true}]},{\"name\":\"condition: block_3 can be placed on block_5\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"can_be_placed_on\",\"property_value\":\"block_5\",\"status\":true}]},{\"name\":\"action: place block_3 on block_5\",\"type_name\":\"action\",\"metadata\":{\"placement\":{\"strategy\":\"edge_offset\",\"target_xy_offset_ratio\":[0.35,0.35]}},\"children\":[],\"effects\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true},{\"object_name\":\"block_3\",\"property_name\":\"is_above\",\"property_value\":\"block_5\",\"status\":true}]}]}]}},{\"candidate_id\":\"weak_precondition_fastpath\",\"rationale\":\"Contains a missing/weak precondition because it omits the can_be_placed_on check, relying only on movability before acting.\",\"behavior_tree\":{\"summary\":\"If already supported, succeed; otherwise only verify movability and attempt placement, making it incomplete as a planner check.\",\"name\":\"selector: block_3 on block_5 weak precondition\",\"identifier\":3,\"type_name\":\"selector\",\"children\":[{\"name\":\"sequence: already satisfied\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: target supported_by(block_3, block_5)\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true}]}]},{\"name\":\"sequence: weak check and place\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: block_3 is movable\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_movable\",\"property_value\":true,\"status\":true}]},{\"name\":\"action: place block_3 on block_5\",\"type_name\":\"action\",\"metadata\":{\"placement\":{\"strategy\":\"stable_center\",\"target_xy_offset_ratio\":[0.0,0.0]}},\"children\":[],\"effects\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true},{\"object_name\":\"block_3\",\"property_name\":\"is_above\",\"property_value\":\"block_5\",\"status\":true}]}]}]}},{\"candidate_id\":\"redundant_double_check\",\"rationale\":\"Redundant and less efficient because it repeats the same target satisfaction check and adds unnecessary duplicated precondition checks before the same placement action.\",\"behavior_tree\":{\"summary\":\"If already supported, succeed; otherwise it redundantly checks the target twice and repeats the preconditions before placing block_3 on block_5.\",\"name\":\"selector: block_3 on block_5 redundant\",\"identifier\":4,\"type_name\":\"selector\",\"children\":[{\"name\":\"sequence: already satisfied\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: target supported_by(block_3, block_5)\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true}]}]},{\"name\":\"sequence: redundant verify and place\",\"type_name\":\"sequence\",\"children\":[{\"name\":\"condition: target supported_by(block_3, block_5)\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true}]},{\"name\":\"condition: block_3 is movable\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_movable\",\"property_value\":true,\"status\":true}]},{\"name\":\"condition: block_3 can be placed on block_5\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"can_be_placed_on\",\"property_value\":\"block_5\",\"status\":true}]},{\"name\":\"condition: block_3 is movable again\",\"type_name\":\"condition\",\"conditions\":[{\"object_name\":\"block_3\",\"property_name\":\"is_movable\",\"property_value\":true,\"status\":true}]},{\"name\":\"action: place block_3 on block_5\",\"type_name\":\"action\",\"metadata\":{\"placement\":{\"strategy\":\"stable_center\",\"target_xy_offset_ratio\":[0.0,0.0]}},\"children\":[],\"effects\":[{\"object_name\":\"block_3\",\"property_name\":\"is_supported_by\",\"property_value\":\"block_5\",\"status\":true},{\"object_name\":\"block_3\",\"property_name\":\"is_above\",\"property_value\":\"block_5\",\"status\":true}]}]}]}}]}",
+    "schema_adapter": "enabled"
+  },
+  "online_ranker": {
+    "result": "success",
+    "model_dir": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/models/online_v5",
+    "learned_dataset": "/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/learned_selector_dataset_v3a.csv",
+    "rows": 660,
+    "groups": 110,
+    "feature_cols": [
+      "initial_timestep",
+      "symbolic_success",
+      "goal_satisfaction",
+      "bt_ticks",
+      "action_count",
+      "condition_failure_count",
+      "invalid_action_count",
+      "tree_size",
+      "tree_depth",
+      "precondition_coverage",
+      "support_stability",
+      "validation_error_count",
+      "task_id",
+      "initial_state_id",
+      "candidate_type",
+      "task_instruction",
+      "target_predicate",
+      "moved_object",
+      "support_object",
+      "source_benchmark",
+      "benchmark"
+    ],
+    "numeric_cols": [
+      "initial_timestep",
+      "symbolic_success",
+      "goal_satisfaction",
+      "bt_ticks",
+      "action_count",
+      "condition_failure_count",
+      "invalid_action_count",
+      "tree_size",
+      "tree_depth",
+      "precondition_coverage",
+      "support_stability",
+      "validation_error_count"
+    ],
+    "categorical_cols": [
+      "task_id",
+      "initial_state_id",
+      "candidate_type",
+      "task_instruction",
+      "target_predicate",
+      "moved_object",
+      "support_object",
+      "source_benchmark",
+      "benchmark"
+    ],
+    "online_epochs": 10,
+    "selectors": [
+      "feature_only_online",
+      "transformer_only_online",
+      "transformer_fused_online"
+    ],
+    "runtime_mode": "loaded_saved_models",
+    "learned_v5_weights": "/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/v5_learned_ensemble_weights.csv",
+    "learned_v5_selectors": [
+      "v5_learned_no_simulation",
+      "v5_learned_full",
+      "v5_learned_no_transformer",
+      "v5_learned_no_symbolic",
+      "manual_v5"
+    ]
+  },
+  "summary": {
+    "candidate_count": 4,
+    "selected_candidate": "stable_center_direct",
+    "selected_score": 1.0,
+    "symbolic_success_count": 4,
+    "oracle_candidate": "stable_center_direct",
+    "oracle_score": 154.533042
+  },
+  "simulation": {
+    "headless_dir": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless",
+    "gui_dir": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui",
+    "data_root": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0",
+    "headless_manifest": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/simulation_jobs_manifest.csv",
+    "gui_manifest": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/simulation_jobs_manifest.csv",
+    "headless_run_script": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/run_jobs.sh",
+    "gui_run_script": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/run_jobs.sh",
+    "metrics_output": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/results/gpt_candidate_evaluations_with_sim.csv",
+    "run_all_headless": "bash /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/run_jobs.sh",
+    "run_all_gui": "bash /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/run_jobs.sh",
+    "oracle": {
+      "candidate_id": "stable_center_direct",
+      "score": 154.533042,
+      "sim_success": 1,
+      "simulation_status": "done"
+    },
+    "simulation_status": {
+      "done": 1,
+      "pending": 3
+    },
+    "oracle_available": true,
+    "visual_replay_selected": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate selected --loop --simple-arm",
+    "visual_replay_oracle": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate oracle --loop --simple-arm"
+  },
+  "selectors": [
+    "v5_learned_no_simulation",
+    "v5_learned_full",
+    "manual_v5",
+    "v5_ensemble_online",
+    "feature_only_online",
+    "transformer_fused_online",
+    "transformer_only_online",
+    "v5_learned_no_transformer",
+    "v5_learned_no_symbolic",
+    "gpt_demo_selector",
+    "symbolic_only",
+    "physical_only",
+    "shortest_tree",
+    "oracle"
+  ],
+  "candidates": [
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "initial_state_id": "state_000_t0",
+      "initial_timestep": 0,
+      "candidate_id": "stable_center_direct",
+      "candidate_type": "gpt_candidate",
+      "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/stable_center_direct.json",
+      "task_instruction": "place block_3 on block_5 with physically stable placement",
+      "target_predicate": "supported_by(block_3, block_5)",
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "symbolic_success": 1,
+      "sim_success": 1,
+      "goal_satisfaction": 1.0,
+      "bt_ticks": 1,
+      "action_count": 1,
+      "condition_failure_count": 0,
+      "invalid_action_count": 0,
+      "tree_size": 7,
+      "tree_depth": 3,
+      "precondition_coverage": 0.5,
+      "final_position_error": 0.001686,
+      "object_displacement_error": 0.475049,
+      "support_stability": 1.0,
+      "contact_violation_proxy": 1.0,
+      "score": 154.533042,
+      "label": "bad",
+      "execution_result": "success",
+      "validation_error_count": 0,
+      "runtime_mode": "fallback_symbolic_effects",
+      "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+      "generator": "existing",
+      "llm_model": "gpt-4.1-mini",
+      "rank": 1,
+      "schema_changes": 0,
+      "symbolic_reliability_score": 72.4,
+      "symbolic_reliability_norm": 1.0,
+      "physical_feasibility_score": 1.0,
+      "learned_model_scores": {
+        "feature_only_online": -1.176373,
+        "transformer_only_online": 1.68619,
+        "transformer_fused_online": -6.540924
+      },
+      "learned_model_scores_norm": {
+        "feature_only_online": 0.851756,
+        "transformer_only_online": 0.140429,
+        "transformer_fused_online": 0.812536
+      },
+      "simulation_reliability_norm": 1.0,
+      "simulation_reliability_score": 87.607895,
+      "selector_scores": {
+        "feature_only_online": 0.851756,
+        "transformer_only_online": 0.140429,
+        "transformer_fused_online": 0.812536,
+        "gpt_demo_selector": 1.0,
+        "symbolic_only": 1.0,
+        "physical_only": 1.0,
+        "shortest_tree": 0.88,
+        "v5_ensemble_online": 0.837738,
+        "v5_learned_full": 1.0,
+        "v5_learned_no_simulation": 1.0,
+        "v5_learned_no_transformer": 1.0,
+        "v5_learned_no_symbolic": 1.0,
+        "manual_v5": 0.837738,
+        "oracle": 0.5
+      },
+      "selector_vote_raw": 0.704979,
+      "symbolic_gate": 1.0,
+      "selector_vote_score": 0.704979,
+      "selector_votes": {
+        "feature_only_online": 0,
+        "transformer_fused_online": 0,
+        "transformer_only_online": 0,
+        "symbolic_only": 1,
+        "shortest_tree": 0
+      },
+      "selector_vote_components": {
+        "feature_only_online": 0.255527,
+        "transformer_fused_online": 0.284388,
+        "transformer_only_online": 0.021064,
+        "symbolic_only": 0.1,
+        "shortest_tree": 0.044
+      },
+      "learned_v5_raw_scores": {
+        "v5_learned_full": 10.040641,
+        "v5_learned_no_simulation": 5.042446,
+        "v5_learned_no_transformer": 10.079279,
+        "v5_learned_no_symbolic": 9.536631
+      },
+      "learned_v5_contributions": {
+        "v5_learned_full": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.578723,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 0.742206,
+          "simulation_reliability_norm": 8.719712
+        },
+        "v5_learned_no_simulation": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.895509,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 4.146938,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_transformer": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.695725,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.651171,
+          "simulation_reliability_norm": 8.732382
+        },
+        "v5_learned_no_symbolic": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.631421,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 8.90521
+        }
+      },
+      "demo_selector_score": 1.0,
+      "simulation_status": "done",
+      "rationale": "Physically stable direct placement on the center of the support, with full precondition checks and a clean success shortcut.",
+      "placement_strategy": "stable_center",
+      "bt_tree": {
+        "label": "If block_3 is already supported by block_5, succeed; otherwise verify preconditions and place block_3 stably on the center of block_5.",
+        "type": "selector",
+        "facts": [],
+        "children": [
+          {
+            "label": "sequence: already satisfied",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: target supported_by(block_3, block_5)",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sequence: check and place stably",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: block_3 is movable",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_movable",
+                        "property_value": true,
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "condition: block_3 can be placed on block_5",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "can_be_placed_on",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "action: place block_3 on block_5",
+                "type": "action",
+                "facts": [
+                  {
+                    "key": "effects",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      },
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_above",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  },
+                  {
+                    "key": "metadata",
+                    "value": {
+                      "placement": {
+                        "strategy": "stable_center",
+                        "target_xy_offset_ratio": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "bt_json": {
+        "summary": "If block_3 is already supported by block_5, succeed; otherwise verify preconditions and place block_3 stably on the center of block_5.",
+        "name": "selector: block_3 on block_5 stable center",
+        "identifier": 1,
+        "type_name": "selector",
+        "children": [
+          {
+            "name": "sequence: already satisfied",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: target supported_by(block_3, block_5)",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "sequence: check and place stably",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: block_3 is movable",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_movable",
+                    "property_value": true,
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "condition: block_3 can be placed on block_5",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "can_be_placed_on",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "action: place block_3 on block_5",
+                "type_name": "action",
+                "metadata": {
+                  "placement": {
+                    "strategy": "stable_center",
+                    "target_xy_offset_ratio": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "children": [],
+                "effects": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  },
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_above",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "score_breakdowns": {
+        "feature_only_online": [
+          {
+            "component": "Pairwise tabular feature ranker",
+            "raw": -1.176373,
+            "weight": 1.0,
+            "contribution": 0.851756,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_only_online": [
+          {
+            "component": "BT-token Transformer ranker",
+            "raw": 1.68619,
+            "weight": 1.0,
+            "contribution": 0.140429,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_fused_online": [
+          {
+            "component": "Transformer + tabular fused ranker",
+            "raw": -6.540924,
+            "weight": 1.0,
+            "contribution": 0.812536,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "gpt_demo_selector": [
+          {
+            "component": "Symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.55,
+            "contribution": 0.55,
+            "detail": "KIOS symbolic execution and precondition coverage."
+          },
+          {
+            "component": "Physical feasibility",
+            "raw": 1.0,
+            "weight": 0.45,
+            "contribution": 0.45,
+            "detail": "Demo-time physical prior from placement strategy."
+          },
+          {
+            "component": "Final demo score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.0,
+            "detail": "Earlier lightweight GPT demo selector."
+          }
+        ],
+        "symbolic_only": [
+          {
+            "component": "Symbolic reliability only",
+            "raw": 72.4,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Uses only KIOS symbolic metrics; physical placement risk and learned ranking are ignored."
+          }
+        ],
+        "physical_only": [
+          {
+            "component": "Physical feasibility only",
+            "raw": 1.0,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Uses only placement strategy prior; symbolic BT quality and learned ranking are ignored."
+          }
+        ],
+        "shortest_tree": [
+          {
+            "component": "BT compactness only",
+            "raw": 0.88,
+            "weight": 1.0,
+            "contribution": 0.88,
+            "detail": "A weak baseline that prefers smaller/shallower BTs."
+          }
+        ],
+        "v5_ensemble_online": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.704979,
+            "weight": 0.55,
+            "contribution": 0.387738,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.704979,
+            "weight": "gate",
+            "contribution": 1.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 1, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.255527, \"shortest_tree\": 0.044, \"symbolic_only\": 0.1, \"transformer_fused_online\": 0.284388, \"transformer_only_online\": 0.021064}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.837738,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "v5_learned_full": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 1.0,
+            "weight": 0.578723,
+            "contribution": 0.578723,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.742206,
+            "contribution": 0.742206,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 1.0,
+            "weight": 8.719712,
+            "contribution": 8.719712,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 10.040641,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_simulation": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 1.0,
+            "weight": 0.895509,
+            "contribution": 0.895509,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 4.146938,
+            "contribution": 4.146938,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 5.042446,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_transformer": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 1.0,
+            "weight": 0.695725,
+            "contribution": 0.695725,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.651171,
+            "contribution": 0.651171,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 1.0,
+            "weight": 8.732382,
+            "contribution": 8.732382,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 10.079279,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_symbolic": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 1.0,
+            "weight": 0.631421,
+            "contribution": 0.631421,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 1.0,
+            "weight": 8.90521,
+            "contribution": 8.90521,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 9.536631,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "manual_v5": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.704979,
+            "weight": 0.55,
+            "contribution": 0.387738,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.704979,
+            "weight": "gate",
+            "contribution": 1.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 1, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.255527, \"shortest_tree\": 0.044, \"symbolic_only\": 0.1, \"transformer_fused_online\": 0.284388, \"transformer_only_online\": 0.021064}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.837738,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "oracle": [
+          {
+            "component": "Isaac Gym true score",
+            "raw": 154.533042,
+            "weight": "oracle",
+            "contribution": 0.5,
+            "detail": "Oracle is available only after running candidate Isaac Gym jobs and collecting simulation metrics."
+          },
+          {
+            "component": "Simulation success",
+            "raw": 1,
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Read from generated demo_000001.pickle when the job has finished."
+          },
+          {
+            "component": "Simulation status",
+            "raw": "done",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "pending means the command has been generated but the Isaac Gym job has not produced a result yet."
+          }
+        ]
+      },
+      "score_breakdown": [
+        {
+          "component": "Learned intercept",
+          "raw": 1.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Bias term learned from pairwise ranking supervision."
+        },
+        {
+          "component": "Feature-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if feature_only chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-fused selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Symbolic-only selector vote",
+          "raw": 1.0,
+          "weight": 0.895509,
+          "contribution": 0.895509,
+          "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Shortest-tree selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+        },
+        {
+          "component": "KIOS symbolic reliability",
+          "raw": 1.0,
+          "weight": 4.146938,
+          "contribution": 4.146938,
+          "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+        },
+        {
+          "component": "Simulation/physical reliability",
+          "raw": 1.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+        },
+        {
+          "component": "Raw learned V5 score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 5.042446,
+          "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+        },
+        {
+          "component": "Normalized selector score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 1.0,
+          "detail": "Score used for ranking in the GPT demo page."
+        }
+      ],
+      "simulation": {
+        "status": "done",
+        "headless_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --headless --no_render_graphics",
+        "gui_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct",
+        "gui_replay_command": "rm -f /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct/demo_000001.pickle && deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct",
+        "visual_replay_command": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate stable_center_direct --loop --simple-arm",
+        "headless_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct/demo_000001.pickle",
+        "gui_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct/demo_000001.pickle",
+        "headless_skip_reason": "",
+        "gui_skip_reason": "",
+        "metrics": {
+          "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+          "generator": "existing",
+          "llm_model": "gpt-4.1-mini",
+          "rank": "1",
+          "demo_selector_score": "1.0",
+          "symbolic_reliability_score": "72.4",
+          "symbolic_reliability_norm": "1.0",
+          "physical_feasibility_score": "1.0",
+          "task_id": "hard_physical_place_block3_on_block5",
+          "initial_state_id": "state_000_t0",
+          "initial_timestep": "0",
+          "candidate_id": "stable_center_direct",
+          "candidate_type": "gpt_candidate",
+          "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/stable_center_direct.json",
+          "task_instruction": "place block_3 on block_5 with physically stable placement",
+          "target_predicate": "supported_by(block_3, block_5)",
+          "moved_object": "block_3",
+          "support_object": "block_5",
+          "symbolic_success": "1",
+          "sim_success": 1,
+          "goal_satisfaction": "1.0",
+          "bt_ticks": "1",
+          "action_count": "1",
+          "condition_failure_count": "0",
+          "invalid_action_count": "0",
+          "tree_size": "7",
+          "tree_depth": "3",
+          "precondition_coverage": "0.5",
+          "final_position_error": 0.001686,
+          "object_displacement_error": 0.475049,
+          "support_stability": 1,
+          "contact_violation_proxy": 1,
+          "score": 154.533042,
+          "label": "good",
+          "execution_result": "success",
+          "validation_error_count": "0",
+          "runtime_mode": "fallback_symbolic_effects",
+          "simulation_status": "done"
+        }
+      },
+      "run_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/stable_center_direct --headless --no_render_graphics"
+    },
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "initial_state_id": "state_000_t0",
+      "initial_timestep": 0,
+      "candidate_id": "edge_offset_risky",
+      "candidate_type": "gpt_candidate",
+      "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/edge_offset_risky.json",
+      "task_instruction": "place block_3 on block_5 with physically stable placement",
+      "target_predicate": "supported_by(block_3, block_5)",
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "symbolic_success": 1,
+      "sim_success": "",
+      "goal_satisfaction": 1.0,
+      "bt_ticks": 1,
+      "action_count": 1,
+      "condition_failure_count": 0,
+      "invalid_action_count": 0,
+      "tree_size": 7,
+      "tree_depth": 3,
+      "precondition_coverage": 0.5,
+      "final_position_error": 0.0,
+      "object_displacement_error": 0.0,
+      "support_stability": "",
+      "contact_violation_proxy": "",
+      "score": 55.5,
+      "label": "bad",
+      "execution_result": "success",
+      "validation_error_count": 0,
+      "runtime_mode": "fallback_symbolic_effects",
+      "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+      "generator": "existing",
+      "llm_model": "gpt-4.1-mini",
+      "rank": 2,
+      "schema_changes": 0,
+      "symbolic_reliability_score": 72.4,
+      "symbolic_reliability_norm": 1.0,
+      "physical_feasibility_score": 0.55,
+      "learned_model_scores": {
+        "feature_only_online": -1.176373,
+        "transformer_only_online": 1.811544,
+        "transformer_fused_online": -6.43099
+      },
+      "learned_model_scores_norm": {
+        "feature_only_online": 0.851756,
+        "transformer_only_online": 0.212409,
+        "transformer_fused_online": 0.990655
+      },
+      "simulation_reliability_norm": 0.0,
+      "simulation_reliability_score": 0.55,
+      "selector_scores": {
+        "feature_only_online": 0.851756,
+        "transformer_only_online": 0.212409,
+        "transformer_fused_online": 0.990655,
+        "gpt_demo_selector": 0.7975,
+        "symbolic_only": 1.0,
+        "physical_only": 0.55,
+        "shortest_tree": 0.88,
+        "v5_ensemble_online": 0.765465,
+        "v5_learned_full": 0.006513,
+        "v5_learned_no_simulation": 0.687157,
+        "v5_learned_no_transformer": 0.005053,
+        "v5_learned_no_symbolic": 0.0,
+        "manual_v5": 0.765465,
+        "oracle": -1.0
+      },
+      "selector_vote_raw": 0.778117,
+      "symbolic_gate": 1.0,
+      "selector_vote_score": 0.778117,
+      "selector_votes": {
+        "feature_only_online": 0,
+        "transformer_fused_online": 0,
+        "transformer_only_online": 0,
+        "symbolic_only": 0,
+        "shortest_tree": 0
+      },
+      "selector_vote_components": {
+        "feature_only_online": 0.255527,
+        "transformer_fused_online": 0.346729,
+        "transformer_only_online": 0.031861,
+        "symbolic_only": 0.1,
+        "shortest_tree": 0.044
+      },
+      "learned_v5_raw_scores": {
+        "v5_learned_full": 0.742206,
+        "v5_learned_no_simulation": 4.146938,
+        "v5_learned_no_transformer": 0.651171,
+        "v5_learned_no_symbolic": -0.0
+      },
+      "learned_v5_contributions": {
+        "v5_learned_full": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 0.742206,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_simulation": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 4.146938,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_transformer": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.651171,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_symbolic": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.0
+        }
+      },
+      "demo_selector_score": 0.687157,
+      "simulation_status": "pending",
+      "rationale": "Symbolically valid but physically risky because it uses an edge-biased offset that may reduce stability despite meeting symbolic preconditions.",
+      "placement_strategy": "edge_offset",
+      "bt_tree": {
+        "label": "If already supported, do nothing; otherwise check preconditions and place block_3 near an edge of block_5.",
+        "type": "selector",
+        "facts": [],
+        "children": [
+          {
+            "label": "sequence: already satisfied",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: target supported_by(block_3, block_5)",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sequence: check and place with risky offset",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: block_3 is movable",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_movable",
+                        "property_value": true,
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "condition: block_3 can be placed on block_5",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "can_be_placed_on",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "action: place block_3 on block_5",
+                "type": "action",
+                "facts": [
+                  {
+                    "key": "effects",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      },
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_above",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  },
+                  {
+                    "key": "metadata",
+                    "value": {
+                      "placement": {
+                        "strategy": "edge_offset",
+                        "target_xy_offset_ratio": [
+                          0.35,
+                          0.35
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "bt_json": {
+        "summary": "If already supported, do nothing; otherwise check preconditions and place block_3 near an edge of block_5.",
+        "name": "selector: block_3 on block_5 edge-biased",
+        "identifier": 2,
+        "type_name": "selector",
+        "children": [
+          {
+            "name": "sequence: already satisfied",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: target supported_by(block_3, block_5)",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "sequence: check and place with risky offset",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: block_3 is movable",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_movable",
+                    "property_value": true,
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "condition: block_3 can be placed on block_5",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "can_be_placed_on",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "action: place block_3 on block_5",
+                "type_name": "action",
+                "metadata": {
+                  "placement": {
+                    "strategy": "edge_offset",
+                    "target_xy_offset_ratio": [
+                      0.35,
+                      0.35
+                    ]
+                  }
+                },
+                "children": [],
+                "effects": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  },
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_above",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "score_breakdowns": {
+        "feature_only_online": [
+          {
+            "component": "Pairwise tabular feature ranker",
+            "raw": -1.176373,
+            "weight": 1.0,
+            "contribution": 0.851756,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_only_online": [
+          {
+            "component": "BT-token Transformer ranker",
+            "raw": 1.811544,
+            "weight": 1.0,
+            "contribution": 0.212409,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_fused_online": [
+          {
+            "component": "Transformer + tabular fused ranker",
+            "raw": -6.43099,
+            "weight": 1.0,
+            "contribution": 0.990655,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "gpt_demo_selector": [
+          {
+            "component": "Symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.55,
+            "contribution": 0.55,
+            "detail": "KIOS symbolic execution and precondition coverage."
+          },
+          {
+            "component": "Physical feasibility",
+            "raw": 0.55,
+            "weight": 0.45,
+            "contribution": 0.2475,
+            "detail": "Demo-time physical prior from placement strategy."
+          },
+          {
+            "component": "Final demo score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.7975,
+            "detail": "Earlier lightweight GPT demo selector."
+          }
+        ],
+        "symbolic_only": [
+          {
+            "component": "Symbolic reliability only",
+            "raw": 72.4,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Uses only KIOS symbolic metrics; physical placement risk and learned ranking are ignored."
+          }
+        ],
+        "physical_only": [
+          {
+            "component": "Physical feasibility only",
+            "raw": 0.55,
+            "weight": 1.0,
+            "contribution": 0.55,
+            "detail": "Uses only placement strategy prior; symbolic BT quality and learned ranking are ignored."
+          }
+        ],
+        "shortest_tree": [
+          {
+            "component": "BT compactness only",
+            "raw": 0.88,
+            "weight": 1.0,
+            "contribution": 0.88,
+            "detail": "A weak baseline that prefers smaller/shallower BTs."
+          }
+        ],
+        "v5_ensemble_online": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.778117,
+            "weight": 0.55,
+            "contribution": 0.427964,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.778117,
+            "weight": "gate",
+            "contribution": 1.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 0.55,
+            "weight": 0.25,
+            "contribution": 0.1375,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 0, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.255527, \"shortest_tree\": 0.044, \"symbolic_only\": 0.1, \"transformer_fused_online\": 0.346729, \"transformer_only_online\": 0.031861}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.765465,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "v5_learned_full": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.742206,
+            "contribution": 0.742206,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.742206,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.006513,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_simulation": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 4.146938,
+            "contribution": 4.146938,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 4.146938,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.687157,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_transformer": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.651171,
+            "contribution": 0.651171,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.651171,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.005053,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_symbolic": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": -0.0,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "manual_v5": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.778117,
+            "weight": 0.55,
+            "contribution": 0.427964,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.778117,
+            "weight": "gate",
+            "contribution": 1.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 72.4,
+            "weight": 0.2,
+            "contribution": 0.2,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 0.55,
+            "weight": 0.25,
+            "contribution": 0.1375,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 0, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.255527, \"shortest_tree\": 0.044, \"symbolic_only\": 0.1, \"transformer_fused_online\": 0.346729, \"transformer_only_online\": 0.031861}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.765465,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "oracle": [
+          {
+            "component": "Isaac Gym true score",
+            "raw": 55.5,
+            "weight": "oracle",
+            "contribution": -1.0,
+            "detail": "Oracle is available only after running candidate Isaac Gym jobs and collecting simulation metrics."
+          },
+          {
+            "component": "Simulation success",
+            "raw": "",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Read from generated demo_000001.pickle when the job has finished."
+          },
+          {
+            "component": "Simulation status",
+            "raw": "pending",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "pending means the command has been generated but the Isaac Gym job has not produced a result yet."
+          }
+        ]
+      },
+      "score_breakdown": [
+        {
+          "component": "Learned intercept",
+          "raw": 1.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Bias term learned from pairwise ranking supervision."
+        },
+        {
+          "component": "Feature-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if feature_only chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-fused selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Symbolic-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Shortest-tree selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+        },
+        {
+          "component": "KIOS symbolic reliability",
+          "raw": 1.0,
+          "weight": 4.146938,
+          "contribution": 4.146938,
+          "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+        },
+        {
+          "component": "Simulation/physical reliability",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+        },
+        {
+          "component": "Raw learned V5 score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 4.146938,
+          "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+        },
+        {
+          "component": "Normalized selector score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 0.687157,
+          "detail": "Score used for ranking in the GPT demo page."
+        }
+      ],
+      "simulation": {
+        "status": "pending",
+        "headless_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --headless --no_render_graphics",
+        "gui_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky",
+        "gui_replay_command": "rm -f /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky/demo_000001.pickle && deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky",
+        "visual_replay_command": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate edge_offset_risky --loop --simple-arm",
+        "headless_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky/demo_000001.pickle",
+        "gui_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky/demo_000001.pickle",
+        "headless_skip_reason": "",
+        "gui_skip_reason": "",
+        "metrics": {
+          "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+          "generator": "existing",
+          "llm_model": "gpt-4.1-mini",
+          "rank": "2",
+          "demo_selector_score": "0.687157",
+          "symbolic_reliability_score": "72.4",
+          "symbolic_reliability_norm": "1.0",
+          "physical_feasibility_score": "0.55",
+          "task_id": "hard_physical_place_block3_on_block5",
+          "initial_state_id": "state_000_t0",
+          "initial_timestep": "0",
+          "candidate_id": "edge_offset_risky",
+          "candidate_type": "gpt_candidate",
+          "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/edge_offset_risky.json",
+          "task_instruction": "place block_3 on block_5 with physically stable placement",
+          "target_predicate": "supported_by(block_3, block_5)",
+          "moved_object": "block_3",
+          "support_object": "block_5",
+          "symbolic_success": "1",
+          "sim_success": "",
+          "goal_satisfaction": "1.0",
+          "bt_ticks": "1",
+          "action_count": "1",
+          "condition_failure_count": "0",
+          "invalid_action_count": "0",
+          "tree_size": "7",
+          "tree_depth": "3",
+          "precondition_coverage": "0.5",
+          "final_position_error": "0.0",
+          "object_displacement_error": "0.0",
+          "support_stability": "",
+          "contact_violation_proxy": "",
+          "score": "55.5",
+          "label": "bad",
+          "execution_result": "success",
+          "validation_error_count": "0",
+          "runtime_mode": "fallback_symbolic_effects",
+          "simulation_status": "pending"
+        }
+      },
+      "run_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/edge_offset_risky --headless --no_render_graphics"
+    },
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "initial_state_id": "state_000_t0",
+      "initial_timestep": 0,
+      "candidate_id": "redundant_double_check",
+      "candidate_type": "gpt_candidate",
+      "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/redundant_double_check.json",
+      "task_instruction": "place block_3 on block_5 with physically stable placement",
+      "target_predicate": "supported_by(block_3, block_5)",
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "symbolic_success": 1,
+      "sim_success": "",
+      "goal_satisfaction": 1.0,
+      "bt_ticks": 1,
+      "action_count": 1,
+      "condition_failure_count": 0,
+      "invalid_action_count": 0,
+      "tree_size": 9,
+      "tree_depth": 3,
+      "precondition_coverage": 0.5,
+      "final_position_error": 0.0,
+      "object_displacement_error": 0.0,
+      "support_stability": "",
+      "contact_violation_proxy": "",
+      "score": 54.5,
+      "label": "bad",
+      "execution_result": "success",
+      "validation_error_count": 0,
+      "runtime_mode": "fallback_symbolic_effects",
+      "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+      "generator": "existing",
+      "llm_model": "gpt-4.1-mini",
+      "rank": 3,
+      "schema_changes": 0,
+      "symbolic_reliability_score": 71.4,
+      "symbolic_reliability_norm": 0.857143,
+      "physical_feasibility_score": 1.0,
+      "learned_model_scores": {
+        "feature_only_online": -3.832023,
+        "transformer_only_online": 1.441632,
+        "transformer_fused_online": -7.042416
+      },
+      "learned_model_scores_norm": {
+        "feature_only_online": 0.0,
+        "transformer_only_online": 0.0,
+        "transformer_fused_online": 0.0
+      },
+      "simulation_reliability_norm": 0.005169,
+      "simulation_reliability_score": 1.0,
+      "selector_scores": {
+        "feature_only_online": 0.0,
+        "transformer_only_online": 0.0,
+        "transformer_fused_online": 0.0,
+        "gpt_demo_selector": 0.921429,
+        "symbolic_only": 0.857143,
+        "physical_only": 1.0,
+        "shortest_tree": 0.76,
+        "v5_ensemble_online": 0.479751,
+        "v5_learned_full": 0.0,
+        "v5_learned_no_simulation": 0.480198,
+        "v5_learned_no_transformer": 0.0,
+        "v5_learned_no_symbolic": 0.004827,
+        "manual_v5": 0.479751,
+        "oracle": -1.0
+      },
+      "selector_vote_raw": 0.123714,
+      "symbolic_gate": 0.857143,
+      "selector_vote_score": 0.106041,
+      "selector_votes": {
+        "feature_only_online": 0,
+        "transformer_fused_online": 0,
+        "transformer_only_online": 0,
+        "symbolic_only": 0,
+        "shortest_tree": 0
+      },
+      "selector_vote_components": {
+        "feature_only_online": 0.0,
+        "transformer_fused_online": 0.0,
+        "transformer_only_online": 0.0,
+        "symbolic_only": 0.085714,
+        "shortest_tree": 0.038
+      },
+      "learned_v5_raw_scores": {
+        "v5_learned_full": 0.681249,
+        "v5_learned_no_simulation": 3.554518,
+        "v5_learned_no_transformer": 0.603285,
+        "v5_learned_no_symbolic": 0.046031
+      },
+      "learned_v5_contributions": {
+        "v5_learned_full": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 0.636177,
+          "simulation_reliability_norm": 0.045072
+        },
+        "v5_learned_no_simulation": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.0,
+          "symbolic_reliability_norm": 3.554518,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_transformer": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.558147,
+          "simulation_reliability_norm": 0.045138
+        },
+        "v5_learned_no_symbolic": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.0,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.0,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.046031
+        }
+      },
+      "demo_selector_score": 0.480198,
+      "simulation_status": "pending",
+      "rationale": "Redundant and less efficient because it repeats the same target satisfaction check and adds unnecessary duplicated precondition checks before the same placement action.",
+      "placement_strategy": "stable_center",
+      "bt_tree": {
+        "label": "If already supported, succeed; otherwise it redundantly checks the target twice and repeats the preconditions before placing block_3 on block_5.",
+        "type": "selector",
+        "facts": [],
+        "children": [
+          {
+            "label": "sequence: already satisfied",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: target supported_by(block_3, block_5)",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sequence: redundant verify and place",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: target supported_by(block_3, block_5)",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "condition: block_3 is movable",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_movable",
+                        "property_value": true,
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "condition: block_3 can be placed on block_5",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "can_be_placed_on",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "condition: block_3 is movable again",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_movable",
+                        "property_value": true,
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "action: place block_3 on block_5",
+                "type": "action",
+                "facts": [
+                  {
+                    "key": "effects",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      },
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_above",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  },
+                  {
+                    "key": "metadata",
+                    "value": {
+                      "placement": {
+                        "strategy": "stable_center",
+                        "target_xy_offset_ratio": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "bt_json": {
+        "summary": "If already supported, succeed; otherwise it redundantly checks the target twice and repeats the preconditions before placing block_3 on block_5.",
+        "name": "selector: block_3 on block_5 redundant",
+        "identifier": 4,
+        "type_name": "selector",
+        "children": [
+          {
+            "name": "sequence: already satisfied",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: target supported_by(block_3, block_5)",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "sequence: redundant verify and place",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: target supported_by(block_3, block_5)",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "condition: block_3 is movable",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_movable",
+                    "property_value": true,
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "condition: block_3 can be placed on block_5",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "can_be_placed_on",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "condition: block_3 is movable again",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_movable",
+                    "property_value": true,
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "action: place block_3 on block_5",
+                "type_name": "action",
+                "metadata": {
+                  "placement": {
+                    "strategy": "stable_center",
+                    "target_xy_offset_ratio": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "children": [],
+                "effects": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  },
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_above",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "score_breakdowns": {
+        "feature_only_online": [
+          {
+            "component": "Pairwise tabular feature ranker",
+            "raw": -3.832023,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_only_online": [
+          {
+            "component": "BT-token Transformer ranker",
+            "raw": 1.441632,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_fused_online": [
+          {
+            "component": "Transformer + tabular fused ranker",
+            "raw": -7.042416,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "gpt_demo_selector": [
+          {
+            "component": "Symbolic reliability",
+            "raw": 71.4,
+            "weight": 0.55,
+            "contribution": 0.471429,
+            "detail": "KIOS symbolic execution and precondition coverage."
+          },
+          {
+            "component": "Physical feasibility",
+            "raw": 1.0,
+            "weight": 0.45,
+            "contribution": 0.45,
+            "detail": "Demo-time physical prior from placement strategy."
+          },
+          {
+            "component": "Final demo score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.921429,
+            "detail": "Earlier lightweight GPT demo selector."
+          }
+        ],
+        "symbolic_only": [
+          {
+            "component": "Symbolic reliability only",
+            "raw": 71.4,
+            "weight": 1.0,
+            "contribution": 0.857143,
+            "detail": "Uses only KIOS symbolic metrics; physical placement risk and learned ranking are ignored."
+          }
+        ],
+        "physical_only": [
+          {
+            "component": "Physical feasibility only",
+            "raw": 1.0,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Uses only placement strategy prior; symbolic BT quality and learned ranking are ignored."
+          }
+        ],
+        "shortest_tree": [
+          {
+            "component": "BT compactness only",
+            "raw": 0.76,
+            "weight": 1.0,
+            "contribution": 0.76,
+            "detail": "A weak baseline that prefers smaller/shallower BTs."
+          }
+        ],
+        "v5_ensemble_online": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.106041,
+            "weight": 0.55,
+            "contribution": 0.058323,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.123714,
+            "weight": "gate",
+            "contribution": 0.857143,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 71.4,
+            "weight": 0.2,
+            "contribution": 0.171429,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 0, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.0, \"shortest_tree\": 0.038, \"symbolic_only\": 0.085714, \"transformer_fused_online\": 0.0, \"transformer_only_online\": 0.0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.479751,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "v5_learned_full": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.857143,
+            "weight": 0.742206,
+            "contribution": 0.636177,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.719675,
+            "contribution": 0.045072,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.681249,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_simulation": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.857143,
+            "weight": 4.146937,
+            "contribution": 3.554518,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 3.554518,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.480198,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_transformer": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.857143,
+            "weight": 0.651171,
+            "contribution": 0.558147,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.732443,
+            "contribution": 0.045138,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.603285,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_symbolic": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": -0.0,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.857143,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.905204,
+            "contribution": 0.046031,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.046031,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.004827,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "manual_v5": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.106041,
+            "weight": 0.55,
+            "contribution": 0.058323,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.123714,
+            "weight": "gate",
+            "contribution": 0.857143,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 71.4,
+            "weight": 0.2,
+            "contribution": 0.171429,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 0, \"shortest_tree\": 0, \"symbolic_only\": 0, \"transformer_fused_online\": 0, \"transformer_only_online\": 0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.0, \"shortest_tree\": 0.038, \"symbolic_only\": 0.085714, \"transformer_fused_online\": 0.0, \"transformer_only_online\": 0.0}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.479751,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "oracle": [
+          {
+            "component": "Isaac Gym true score",
+            "raw": 54.5,
+            "weight": "oracle",
+            "contribution": -1.0,
+            "detail": "Oracle is available only after running candidate Isaac Gym jobs and collecting simulation metrics."
+          },
+          {
+            "component": "Simulation success",
+            "raw": "",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Read from generated demo_000001.pickle when the job has finished."
+          },
+          {
+            "component": "Simulation status",
+            "raw": "pending",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "pending means the command has been generated but the Isaac Gym job has not produced a result yet."
+          }
+        ]
+      },
+      "score_breakdown": [
+        {
+          "component": "Learned intercept",
+          "raw": 1.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Bias term learned from pairwise ranking supervision."
+        },
+        {
+          "component": "Feature-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if feature_only chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-fused selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Symbolic-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Shortest-tree selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+        },
+        {
+          "component": "KIOS symbolic reliability",
+          "raw": 0.857143,
+          "weight": 4.146937,
+          "contribution": 3.554518,
+          "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+        },
+        {
+          "component": "Simulation/physical reliability",
+          "raw": 0.005169,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+        },
+        {
+          "component": "Raw learned V5 score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 3.554518,
+          "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+        },
+        {
+          "component": "Normalized selector score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 0.480198,
+          "detail": "Score used for ranking in the GPT demo page."
+        }
+      ],
+      "simulation": {
+        "status": "pending",
+        "headless_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --headless --no_render_graphics",
+        "gui_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check",
+        "gui_replay_command": "rm -f /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check/demo_000001.pickle && deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check",
+        "visual_replay_command": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate redundant_double_check --loop --simple-arm",
+        "headless_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check/demo_000001.pickle",
+        "gui_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check/demo_000001.pickle",
+        "headless_skip_reason": "",
+        "gui_skip_reason": "",
+        "metrics": {
+          "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+          "generator": "existing",
+          "llm_model": "gpt-4.1-mini",
+          "rank": "3",
+          "demo_selector_score": "0.480198",
+          "symbolic_reliability_score": "71.4",
+          "symbolic_reliability_norm": "0.857143",
+          "physical_feasibility_score": "1.0",
+          "task_id": "hard_physical_place_block3_on_block5",
+          "initial_state_id": "state_000_t0",
+          "initial_timestep": "0",
+          "candidate_id": "redundant_double_check",
+          "candidate_type": "gpt_candidate",
+          "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/redundant_double_check.json",
+          "task_instruction": "place block_3 on block_5 with physically stable placement",
+          "target_predicate": "supported_by(block_3, block_5)",
+          "moved_object": "block_3",
+          "support_object": "block_5",
+          "symbolic_success": "1",
+          "sim_success": "",
+          "goal_satisfaction": "1.0",
+          "bt_ticks": "1",
+          "action_count": "1",
+          "condition_failure_count": "0",
+          "invalid_action_count": "0",
+          "tree_size": "9",
+          "tree_depth": "3",
+          "precondition_coverage": "0.5",
+          "final_position_error": "0.0",
+          "object_displacement_error": "0.0",
+          "support_stability": "",
+          "contact_violation_proxy": "",
+          "score": "54.5",
+          "label": "bad",
+          "execution_result": "success",
+          "validation_error_count": "0",
+          "runtime_mode": "fallback_symbolic_effects",
+          "simulation_status": "pending"
+        }
+      },
+      "run_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/redundant_double_check --headless --no_render_graphics"
+    },
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "initial_state_id": "state_000_t0",
+      "initial_timestep": 0,
+      "candidate_id": "weak_precondition_fastpath",
+      "candidate_type": "gpt_candidate",
+      "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/weak_precondition_fastpath.json",
+      "task_instruction": "place block_3 on block_5 with physically stable placement",
+      "target_predicate": "supported_by(block_3, block_5)",
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "symbolic_success": 1,
+      "sim_success": "",
+      "goal_satisfaction": 1.0,
+      "bt_ticks": 1,
+      "action_count": 1,
+      "condition_failure_count": 0,
+      "invalid_action_count": 0,
+      "tree_size": 6,
+      "tree_depth": 3,
+      "precondition_coverage": 0.0,
+      "final_position_error": 0.0,
+      "object_displacement_error": 0.0,
+      "support_stability": "",
+      "contact_violation_proxy": "",
+      "score": 46.0,
+      "label": "bad",
+      "execution_result": "success",
+      "validation_error_count": 0,
+      "runtime_mode": "fallback_symbolic_effects",
+      "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+      "generator": "existing",
+      "llm_model": "gpt-4.1-mini",
+      "rank": 4,
+      "schema_changes": 0,
+      "symbolic_reliability_score": 65.4,
+      "symbolic_reliability_norm": 0.0,
+      "physical_feasibility_score": 1.0,
+      "learned_model_scores": {
+        "feature_only_online": -0.714169,
+        "transformer_only_online": 3.183139,
+        "transformer_fused_online": -6.425222
+      },
+      "learned_model_scores_norm": {
+        "feature_only_online": 1.0,
+        "transformer_only_online": 1.0,
+        "transformer_fused_online": 1.0
+      },
+      "simulation_reliability_norm": 0.005169,
+      "simulation_reliability_score": 1.0,
+      "selector_scores": {
+        "feature_only_online": 1.0,
+        "transformer_only_online": 1.0,
+        "transformer_fused_online": 1.0,
+        "gpt_demo_selector": 0.45,
+        "symbolic_only": 0.0,
+        "physical_only": 1.0,
+        "shortest_tree": 0.94,
+        "v5_ensemble_online": 0.25,
+        "v5_learned_full": 0.108829,
+        "v5_learned_no_simulation": 0.0,
+        "v5_learned_no_transformer": 0.046462,
+        "v5_learned_no_symbolic": 0.151116,
+        "manual_v5": 0.25,
+        "oracle": -1.0
+      },
+      "selector_vote_raw": 0.847,
+      "symbolic_gate": 0.0,
+      "selector_vote_score": 0.0,
+      "selector_votes": {
+        "feature_only_online": 1,
+        "transformer_fused_online": 1,
+        "transformer_only_online": 1,
+        "symbolic_only": 0,
+        "shortest_tree": 1
+      },
+      "selector_vote_components": {
+        "feature_only_online": 0.3,
+        "transformer_fused_online": 0.35,
+        "transformer_only_online": 0.15,
+        "symbolic_only": 0.0,
+        "shortest_tree": 0.047
+      },
+      "learned_v5_raw_scores": {
+        "v5_learned_full": 1.699819,
+        "v5_learned_no_simulation": 2.179959,
+        "v5_learned_no_transformer": 1.04356,
+        "v5_learned_no_symbolic": 1.441141
+      },
+      "learned_v5_contributions": {
+        "v5_learned_full": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.426823,
+          "vote_transformer_fused": 0.78355,
+          "vote_transformer_only": 0.422796,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.021578,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.045072
+        },
+        "v5_learned_no_simulation": {
+          "intercept": 0.0,
+          "vote_feature_only": 0.626203,
+          "vote_transformer_fused": 0.895747,
+          "vote_transformer_only": 0.354958,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": 0.30305,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.0
+        },
+        "v5_learned_no_transformer": {
+          "intercept": -0.0,
+          "vote_feature_only": 1.119862,
+          "vote_transformer_fused": 0.0,
+          "vote_transformer_only": 0.0,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.12144,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.045138
+        },
+        "v5_learned_no_symbolic": {
+          "intercept": -0.0,
+          "vote_feature_only": 0.377439,
+          "vote_transformer_fused": 0.765689,
+          "vote_transformer_only": 0.413525,
+          "vote_symbolic_only": 0.0,
+          "vote_shortest_tree": -0.161542,
+          "symbolic_reliability_norm": 0.0,
+          "simulation_reliability_norm": 0.046031
+        }
+      },
+      "demo_selector_score": 0.0,
+      "simulation_status": "pending",
+      "rationale": "Contains a missing/weak precondition because it omits the can_be_placed_on check, relying only on movability before acting.",
+      "placement_strategy": "stable_center",
+      "bt_tree": {
+        "label": "If already supported, succeed; otherwise only verify movability and attempt placement, making it incomplete as a planner check.",
+        "type": "selector",
+        "facts": [],
+        "children": [
+          {
+            "label": "sequence: already satisfied",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: target supported_by(block_3, block_5)",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "sequence: weak check and place",
+            "type": "sequence",
+            "facts": [],
+            "children": [
+              {
+                "label": "condition: block_3 is movable",
+                "type": "condition",
+                "facts": [
+                  {
+                    "key": "conditions",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_movable",
+                        "property_value": true,
+                        "status": true
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              },
+              {
+                "label": "action: place block_3 on block_5",
+                "type": "action",
+                "facts": [
+                  {
+                    "key": "effects",
+                    "value": [
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_supported_by",
+                        "property_value": "block_5",
+                        "status": true
+                      },
+                      {
+                        "object_name": "block_3",
+                        "property_name": "is_above",
+                        "property_value": "block_5",
+                        "status": true
+                      }
+                    ]
+                  },
+                  {
+                    "key": "metadata",
+                    "value": {
+                      "placement": {
+                        "strategy": "stable_center",
+                        "target_xy_offset_ratio": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "bt_json": {
+        "summary": "If already supported, succeed; otherwise only verify movability and attempt placement, making it incomplete as a planner check.",
+        "name": "selector: block_3 on block_5 weak precondition",
+        "identifier": 3,
+        "type_name": "selector",
+        "children": [
+          {
+            "name": "sequence: already satisfied",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: target supported_by(block_3, block_5)",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "sequence: weak check and place",
+            "type_name": "sequence",
+            "children": [
+              {
+                "name": "condition: block_3 is movable",
+                "type_name": "condition",
+                "conditions": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_movable",
+                    "property_value": true,
+                    "status": true
+                  }
+                ]
+              },
+              {
+                "name": "action: place block_3 on block_5",
+                "type_name": "action",
+                "metadata": {
+                  "placement": {
+                    "strategy": "stable_center",
+                    "target_xy_offset_ratio": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "children": [],
+                "effects": [
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_supported_by",
+                    "property_value": "block_5",
+                    "status": true
+                  },
+                  {
+                    "object_name": "block_3",
+                    "property_name": "is_above",
+                    "property_value": "block_5",
+                    "status": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "score_breakdowns": {
+        "feature_only_online": [
+          {
+            "component": "Pairwise tabular feature ranker",
+            "raw": -0.714169,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_only_online": [
+          {
+            "component": "BT-token Transformer ranker",
+            "raw": 3.183139,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "transformer_fused_online": [
+          {
+            "component": "Transformer + tabular fused ranker",
+            "raw": -6.425222,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Online score from a model trained on the full simulated benchmark dataset during this demo run."
+          }
+        ],
+        "gpt_demo_selector": [
+          {
+            "component": "Symbolic reliability",
+            "raw": 65.4,
+            "weight": 0.55,
+            "contribution": 0.0,
+            "detail": "KIOS symbolic execution and precondition coverage."
+          },
+          {
+            "component": "Physical feasibility",
+            "raw": 1.0,
+            "weight": 0.45,
+            "contribution": 0.45,
+            "detail": "Demo-time physical prior from placement strategy."
+          },
+          {
+            "component": "Final demo score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.45,
+            "detail": "Earlier lightweight GPT demo selector."
+          }
+        ],
+        "symbolic_only": [
+          {
+            "component": "Symbolic reliability only",
+            "raw": 65.4,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "detail": "Uses only KIOS symbolic metrics; physical placement risk and learned ranking are ignored."
+          }
+        ],
+        "physical_only": [
+          {
+            "component": "Physical feasibility only",
+            "raw": 1.0,
+            "weight": 1.0,
+            "contribution": 1.0,
+            "detail": "Uses only placement strategy prior; symbolic BT quality and learned ranking are ignored."
+          }
+        ],
+        "shortest_tree": [
+          {
+            "component": "BT compactness only",
+            "raw": 0.94,
+            "weight": 1.0,
+            "contribution": 0.94,
+            "detail": "A weak baseline that prefers smaller/shallower BTs."
+          }
+        ],
+        "v5_ensemble_online": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.0,
+            "weight": 0.55,
+            "contribution": 0.0,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.847,
+            "weight": "gate",
+            "contribution": 0.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 65.4,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 1, \"shortest_tree\": 1, \"symbolic_only\": 0, \"transformer_fused_online\": 1, \"transformer_only_online\": 1}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.3, \"shortest_tree\": 0.047, \"symbolic_only\": 0.0, \"transformer_fused_online\": 0.35, \"transformer_only_online\": 0.15}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.25,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "v5_learned_full": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 1.0,
+            "weight": 0.426823,
+            "contribution": 0.426823,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 1.0,
+            "weight": 0.78355,
+            "contribution": 0.78355,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 1.0,
+            "weight": 0.422796,
+            "contribution": 0.422796,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 1.0,
+            "weight": 0.021578,
+            "contribution": 0.021578,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.719675,
+            "contribution": 0.045072,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.699819,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.108829,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_simulation": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 1.0,
+            "weight": 0.626203,
+            "contribution": 0.626203,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 1.0,
+            "weight": 0.895747,
+            "contribution": 0.895747,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 1.0,
+            "weight": 0.354958,
+            "contribution": 0.354958,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 1.0,
+            "weight": 0.30305,
+            "contribution": 0.30305,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 2.179959,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.0,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_transformer": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 1.0,
+            "weight": 1.119862,
+            "contribution": 1.119862,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 1.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 1.0,
+            "weight": -0.12144,
+            "contribution": -0.12144,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.732443,
+            "contribution": 0.045138,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.04356,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.046462,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "v5_learned_no_symbolic": [
+          {
+            "component": "Learned intercept",
+            "raw": 1.0,
+            "weight": -0.0,
+            "contribution": -0.0,
+            "detail": "Bias term learned from pairwise ranking supervision."
+          },
+          {
+            "component": "Feature-only selector vote",
+            "raw": 1.0,
+            "weight": 0.377439,
+            "contribution": 0.377439,
+            "detail": "1 if feature_only chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-fused selector vote",
+            "raw": 1.0,
+            "weight": 0.765689,
+            "contribution": 0.765689,
+            "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Transformer-only selector vote",
+            "raw": 1.0,
+            "weight": 0.413525,
+            "contribution": 0.413525,
+            "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Symbolic-only selector vote",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+          },
+          {
+            "component": "Shortest-tree selector vote",
+            "raw": 1.0,
+            "weight": -0.161542,
+            "contribution": -0.161542,
+            "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 0.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+          },
+          {
+            "component": "Simulation/physical reliability",
+            "raw": 0.005169,
+            "weight": 8.905204,
+            "contribution": 0.046031,
+            "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+          },
+          {
+            "component": "Raw learned V5 score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 1.441141,
+            "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+          },
+          {
+            "component": "Normalized selector score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.151116,
+            "detail": "Score used for ranking in the GPT demo page."
+          }
+        ],
+        "manual_v5": [
+          {
+            "component": "Selector vote score",
+            "raw": 0.0,
+            "weight": 0.55,
+            "contribution": 0.0,
+            "detail": "Soft sub-selector agreement after KIOS symbolic safety gate."
+          },
+          {
+            "component": "Raw soft vote",
+            "raw": 0.847,
+            "weight": "gate",
+            "contribution": 0.0,
+            "detail": "The learned/Transformer vote is multiplied by symbolic reliability before entering V5."
+          },
+          {
+            "component": "KIOS symbolic reliability",
+            "raw": 65.4,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "detail": "Symbolic execution success, goal satisfaction, precondition coverage, failures, and BT cost."
+          },
+          {
+            "component": "Online physical reliability",
+            "raw": 1.0,
+            "weight": 0.25,
+            "contribution": 0.25,
+            "detail": "Physical feasibility prior for GPT candidates; Isaac Gym can replace this field after simulation."
+          },
+          {
+            "component": "Hard winner flags",
+            "raw": "{\"feature_only_online\": 1, \"shortest_tree\": 1, \"symbolic_only\": 0, \"transformer_fused_online\": 1, \"transformer_only_online\": 1}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "For explanation only: 1 means this candidate was the top candidate under that sub-selector."
+          },
+          {
+            "component": "Soft vote components",
+            "raw": "{\"feature_only_online\": 0.3, \"shortest_tree\": 0.047, \"symbolic_only\": 0.0, \"transformer_fused_online\": 0.35, \"transformer_only_online\": 0.15}",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Actual weighted sub-selector contributions used by online V5."
+          },
+          {
+            "component": "Final V5 online score",
+            "raw": "-",
+            "weight": "-",
+            "contribution": 0.25,
+            "detail": "This is the deployable online V5 selector used by the GPT demo."
+          }
+        ],
+        "oracle": [
+          {
+            "component": "Isaac Gym true score",
+            "raw": 46.0,
+            "weight": "oracle",
+            "contribution": -1.0,
+            "detail": "Oracle is available only after running candidate Isaac Gym jobs and collecting simulation metrics."
+          },
+          {
+            "component": "Simulation success",
+            "raw": "",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "Read from generated demo_000001.pickle when the job has finished."
+          },
+          {
+            "component": "Simulation status",
+            "raw": "pending",
+            "weight": "-",
+            "contribution": "-",
+            "detail": "pending means the command has been generated but the Isaac Gym job has not produced a result yet."
+          }
+        ]
+      },
+      "score_breakdown": [
+        {
+          "component": "Learned intercept",
+          "raw": 1.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Bias term learned from pairwise ranking supervision."
+        },
+        {
+          "component": "Feature-only selector vote",
+          "raw": 1.0,
+          "weight": 0.626203,
+          "contribution": 0.626203,
+          "detail": "1 if feature_only chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-fused selector vote",
+          "raw": 1.0,
+          "weight": 0.895747,
+          "contribution": 0.895747,
+          "detail": "1 if Transformer+tabular selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Transformer-only selector vote",
+          "raw": 1.0,
+          "weight": 0.354958,
+          "contribution": 0.354958,
+          "detail": "1 if BT-token Transformer selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Symbolic-only selector vote",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "1 if symbolic-only selector chose this candidate, otherwise 0."
+        },
+        {
+          "component": "Shortest-tree selector vote",
+          "raw": 1.0,
+          "weight": 0.30305,
+          "contribution": 0.30305,
+          "detail": "1 if shortest-tree baseline chose this candidate, otherwise 0."
+        },
+        {
+          "component": "KIOS symbolic reliability",
+          "raw": 0.0,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Normalized symbolic/KIOS reliability within the generated candidate set."
+        },
+        {
+          "component": "Simulation/physical reliability",
+          "raw": 0.005169,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "detail": "Uses Isaac Gym reliability when available; otherwise uses the demo physical prior."
+        },
+        {
+          "component": "Raw learned V5 score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 2.179959,
+          "detail": "Unnormalized linear score before per-candidate-set min-max normalization."
+        },
+        {
+          "component": "Normalized selector score",
+          "raw": "-",
+          "weight": "-",
+          "contribution": 0.0,
+          "detail": "Score used for ranking in the GPT demo page."
+        }
+      ],
+      "simulation": {
+        "status": "pending",
+        "headless_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --headless --no_render_graphics",
+        "gui_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath",
+        "gui_replay_command": "rm -f /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath/demo_000001.pickle && deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/gui/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath",
+        "visual_replay_command": "export PATH=/usr/lib/wsl/lib:$PATH && export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH && export VK_ICD_FILENAMES=${VK_ICD_FILENAMES:-/usr/share/vulkan/icd.d/dzn_icd.x86_64.json} && export MESA_D3D12_DEFAULT_ADAPTER_NAME=${MESA_D3D12_DEFAULT_ADAPTER_NAME:-NVIDIA} && unset LIBGL_ALWAYS_SOFTWARE && cd /home/theshy/projects/mycode/kios_baseline && python3 /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/run_visual_replay.py --demo-data /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json --candidate weak_precondition_fastpath --loop --simple-arm",
+        "headless_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath/demo_000001.pickle",
+        "gui_expected_pickle": "/home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath/demo_000001.pickle",
+        "headless_skip_reason": "",
+        "gui_skip_reason": "",
+        "metrics": {
+          "case_id": "hard_physical_place_block3_on_block5__state_000_t0",
+          "generator": "existing",
+          "llm_model": "gpt-4.1-mini",
+          "rank": "4",
+          "demo_selector_score": "0.0",
+          "symbolic_reliability_score": "65.4",
+          "symbolic_reliability_norm": "0.0",
+          "physical_feasibility_score": "1.0",
+          "task_id": "hard_physical_place_block3_on_block5",
+          "initial_state_id": "state_000_t0",
+          "initial_timestep": "0",
+          "candidate_id": "weak_precondition_fastpath",
+          "candidate_type": "gpt_candidate",
+          "bt_path": "experiments/gpt_candidate_demo/outputs/hard_physical_place_block3_on_block5__state_000_t0/candidates/weak_precondition_fastpath.json",
+          "task_instruction": "place block_3 on block_5 with physically stable placement",
+          "target_predicate": "supported_by(block_3, block_5)",
+          "moved_object": "block_3",
+          "support_object": "block_5",
+          "symbolic_success": "1",
+          "sim_success": "",
+          "goal_satisfaction": "1.0",
+          "bt_ticks": "1",
+          "action_count": "1",
+          "condition_failure_count": "0",
+          "invalid_action_count": "0",
+          "tree_size": "6",
+          "tree_depth": "3",
+          "precondition_coverage": "0.0",
+          "final_position_error": "0.0",
+          "object_displacement_error": "0.0",
+          "support_stability": "",
+          "contact_violation_proxy": "",
+          "score": "46.0",
+          "label": "bad",
+          "execution_result": "success",
+          "validation_error_count": "0",
+          "runtime_mode": "fallback_symbolic_effects",
+          "simulation_status": "pending"
+        }
+      },
+      "run_command": "deactivate 2>/dev/null || true && source /opt/ros/noetic/setup.bash && source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash && cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts && python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/simulation_jobs/hard_physical_place_block3_on_block5__state_000_t0/headless/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/mycode/datasets/gpt_candidate_demo/hard_physical_place_block3_on_block5__state_000_t0/state_000_t0/hard_physical_place_block3_on_block5/weak_precondition_fastpath --headless --no_render_graphics"
+    }
+  ],
+  "outputs": {
+    "evaluations_csv": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/results/gpt_candidate_evaluations.csv",
+    "frontend_json": "/home/theshy/projects/mycode/kios_baseline/experiments/gpt_candidate_demo/frontend/demo_data.json"
+  }
+}

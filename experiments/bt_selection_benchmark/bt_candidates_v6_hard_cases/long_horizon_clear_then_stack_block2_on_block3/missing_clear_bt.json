@@ -1,0 +1,65 @@
+{
+  "summary": "missing_clear_bt: move block_4 away, then stack block_2 on block_3",
+  "name": "selector: missing_clear_bt for long_horizon_clear_then_stack_block2_on_block3",
+  "identifier": 2,
+  "type_name": "selector",
+  "children": [
+    {
+      "summary": "target is already satisfied",
+      "name": "condition: is_supported_by(block_2, block_3)",
+      "identifier": 3,
+      "type_name": "condition",
+      "conditions": [
+        {
+          "object_name": "block_2",
+          "property_name": "is_supported_by",
+          "property_value": "block_3",
+          "status": true
+        }
+      ]
+    },
+    {
+      "summary": "multi-step sequence for long_horizon_clear_then_stack_block2_on_block3",
+      "name": "sequence: missing_clear_bt for long_horizon_clear_then_stack_block2_on_block3",
+      "identifier": 4,
+      "type_name": "sequence",
+      "children": [
+        {
+          "summary": "place block_2 on block_3",
+          "name": "action: place(block_2, block_3)",
+          "identifier": 1,
+          "type_name": "action",
+          "effects": [
+            {
+              "object_name": "block_2",
+              "property_name": "is_free",
+              "property_value": null,
+              "status": false
+            },
+            {
+              "object_name": "block_2",
+              "property_name": "is_supported_by",
+              "property_value": "block_3",
+              "status": true
+            },
+            {
+              "object_name": "block_2",
+              "property_name": "is_above",
+              "property_value": "block_3",
+              "status": true
+            }
+          ],
+          "metadata": {
+            "placement": {
+              "strategy": "final_stack_center",
+              "target_xy_offset_ratio": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

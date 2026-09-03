@@ -1,0 +1,16 @@
+selector,task_id,initial_state_id,selected_candidate_id,selected_candidate_type,selected_symbolic_success,selected_goal_satisfaction,selected_score,oracle_candidate_id,oracle_candidate_type,oracle_symbolic_success,oracle_score,regret
+first_candidate,place_block3_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,164.979938,correct_bt,correct_bt,1,164.979938,0.0
+first_candidate,place_block1_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.080314,correct_bt,correct_bt,1,165.080314,0.0
+first_candidate,place_block2_on_block6,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.419192,correct_bt,correct_bt,1,165.419192,0.0
+shortest_tree,place_block3_on_block5,ll4ma_minimal_t0,unsafe_or_invalid_bt,unsafe_or_invalid_bt,0,0.0,-32.0,correct_bt,correct_bt,1,164.979938,196.979938
+shortest_tree,place_block1_on_block5,ll4ma_minimal_t0,unsafe_or_invalid_bt,unsafe_or_invalid_bt,0,0.0,-32.0,correct_bt,correct_bt,1,165.080314,197.080314
+shortest_tree,place_block2_on_block6,ll4ma_minimal_t0,unsafe_or_invalid_bt,unsafe_or_invalid_bt,0,0.0,-32.0,correct_bt,correct_bt,1,165.419192,197.419192
+symbolic_success,place_block3_on_block5,ll4ma_minimal_t0,missing_precondition_bt,missing_precondition_bt,1,1.0,155.981858,correct_bt,correct_bt,1,164.979938,8.99808
+symbolic_success,place_block1_on_block5,ll4ma_minimal_t0,missing_precondition_bt,missing_precondition_bt,1,1.0,155.47867,correct_bt,correct_bt,1,165.080314,9.601644
+symbolic_success,place_block2_on_block6,ll4ma_minimal_t0,missing_precondition_bt,missing_precondition_bt,1,1.0,156.039432,correct_bt,correct_bt,1,165.419192,9.37976
+rule_based,place_block3_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,164.979938,correct_bt,correct_bt,1,164.979938,0.0
+rule_based,place_block1_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.080314,correct_bt,correct_bt,1,165.080314,0.0
+rule_based,place_block2_on_block6,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.419192,correct_bt,correct_bt,1,165.419192,0.0
+oracle,place_block3_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,164.979938,correct_bt,correct_bt,1,164.979938,0.0
+oracle,place_block1_on_block5,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.080314,correct_bt,correct_bt,1,165.080314,0.0
+oracle,place_block2_on_block6,ll4ma_minimal_t0,correct_bt,correct_bt,1,1.0,165.419192,correct_bt,correct_bt,1,165.419192,0.0

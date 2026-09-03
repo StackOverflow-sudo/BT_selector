@@ -1,0 +1,5 @@
+benchmark,file,candidate_rows,task_state_groups,sim_done,sim_skipped,sim_pending,symbolic_success_rate,sim_success_rate
+V1 supported-by,/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/bt_candidate_evaluations_v1_supported_by_with_sim.csv,120,20,100,20,0,0.625,0.38333333333333336
+V2 stacking probe,/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/bt_candidate_evaluations_v2_stacking_probe_with_sim.csv,240,40,200,40,0,0.5625,0.19166666666666668
+V2B physical strategy,/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/bt_candidate_evaluations_v2b_physical_strategy_with_sim.csv,120,20,120,0,0,1.0,0.3416666666666667
+V6 hard cases,/home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/results/bt_candidate_evaluations_v6_hard_cases_with_sim.csv,180,30,170,10,0,0.8888888888888888,0.2388888888888889

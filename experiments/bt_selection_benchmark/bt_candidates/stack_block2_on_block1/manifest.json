@@ -1,0 +1,35 @@
+{
+  "task_id": "stack_block2_on_block1",
+  "candidates": [
+    {
+      "candidate_id": "correct_bt",
+      "candidate_type": "correct_bt",
+      "bt_path": "correct_bt.json"
+    },
+    {
+      "candidate_id": "missing_precondition_bt",
+      "candidate_type": "missing_precondition_bt",
+      "bt_path": "missing_precondition_bt.json"
+    },
+    {
+      "candidate_id": "wrong_object_bt",
+      "candidate_type": "wrong_object_bt",
+      "bt_path": "wrong_object_bt.json"
+    },
+    {
+      "candidate_id": "wrong_support_bt",
+      "candidate_type": "wrong_support_bt",
+      "bt_path": "wrong_support_bt.json"
+    },
+    {
+      "candidate_id": "redundant_bt",
+      "candidate_type": "redundant_bt",
+      "bt_path": "redundant_bt.json"
+    },
+    {
+      "candidate_id": "unsafe_or_invalid_bt",
+      "candidate_type": "unsafe_or_invalid_bt",
+      "bt_path": "unsafe_or_invalid_bt.json"
+    }
+  ]
+}

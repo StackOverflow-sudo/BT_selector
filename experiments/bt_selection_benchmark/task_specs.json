@@ -1,0 +1,80 @@
+{
+  "benchmark_name": "bt_selection_benchmark_v0",
+  "environment": "ll4ma_cupboard_blocks",
+  "description": "Initial task specification for selecting reliable behavior trees from multiple candidates in the KIOS + LL4MA Isaac Gym bridge.",
+  "initial_state_policy": {
+    "type": "seeded_variations",
+    "planned_count_per_task": 5,
+    "notes": "V0 can reuse the current LL4MA pickle and later sample object positions through Isaac Gym config variations."
+  },
+  "tasks": [
+    {
+      "task_id": "place_block3_on_block5",
+      "instruction": "place block_3 on block_5",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_3", "target": "block_5"}
+      ],
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "priority": "v0_required",
+      "notes": "Current working baseline task."
+    },
+    {
+      "task_id": "place_block1_on_block5",
+      "instruction": "place block_1 on block_5",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_1", "target": "block_5"}
+      ],
+      "moved_object": "block_1",
+      "support_object": "block_5",
+      "priority": "v0_required",
+      "notes": "Same support object as the baseline, different movable block."
+    },
+    {
+      "task_id": "place_block2_on_block6",
+      "instruction": "place block_2 on block_6",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_2", "target": "block_6"}
+      ],
+      "moved_object": "block_2",
+      "support_object": "block_6",
+      "priority": "v0_required",
+      "notes": "Tests selection when the target support is a different shelf level."
+    },
+    {
+      "task_id": "stack_block3_on_block1",
+      "instruction": "stack block_3 on block_1",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_3", "target": "block_1"}
+      ],
+      "moved_object": "block_3",
+      "support_object": "block_1",
+      "priority": "v1_after_v0",
+      "notes": "Movable-on-movable stacking; may need a stricter stability metric."
+    },
+    {
+      "task_id": "move_block4_to_shelf_region",
+      "instruction": "move block_4 to the shelf region",
+      "goal_type": "in_region",
+      "target_predicates": [
+        {"name": "in_region", "source": "block_4", "target": "shelf_region"}
+      ],
+      "moved_object": "block_4",
+      "support_object": null,
+      "priority": "v1_after_v0",
+      "notes": "Region-goal task; useful later for non-support predicates."
+    }
+  ],
+  "candidate_types": [
+    "correct_bt",
+    "missing_precondition_bt",
+    "wrong_object_bt",
+    "wrong_support_bt",
+    "redundant_bt",
+    "unsafe_or_invalid_bt"
+  ]
+}

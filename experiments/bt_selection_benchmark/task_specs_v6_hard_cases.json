@@ -1,0 +1,92 @@
+{
+  "benchmark_name": "bt_selection_benchmark_v6_hard_cases",
+  "environment": "ll4ma_cupboard_blocks",
+  "description": "V6 hard-case benchmark with three challenge families: symbolically valid but physically risky placement, long-horizon ordering, and constrained support/collision-risk placement.",
+  "initial_state_policy": {
+    "type": "seeded_variations",
+    "planned_count_per_task": 5,
+    "notes": "Uses available LL4MA/Points2Plans pickle timesteps as initial symbolic worlds."
+  },
+  "tasks": [
+    {
+      "task_id": "hard_physical_place_block3_on_block5",
+      "instruction": "place block_3 on block_5 with physically stable placement",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_3", "target": "block_5"}],
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "symbolic_success_physical_failure",
+      "candidate_types": ["stable_center_bt", "symbolic_edge_bt", "symbolic_corner_bt", "unstable_over_edge_bt", "collision_far_offset_bt", "missing_precondition_bt"],
+      "notes": "Several candidates are symbolically valid supported_by plans but use unstable or risky placement offsets."
+    },
+    {
+      "task_id": "hard_physical_place_block1_on_block5",
+      "instruction": "place block_1 on block_5 with physically stable placement",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_1", "target": "block_5"}],
+      "moved_object": "block_1",
+      "support_object": "block_5",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "symbolic_success_physical_failure",
+      "candidate_types": ["stable_center_bt", "symbolic_edge_bt", "symbolic_corner_bt", "unstable_over_edge_bt", "collision_far_offset_bt", "missing_precondition_bt"],
+      "notes": "Physical placement strategy should distinguish center placement from edge and far-offset variants."
+    },
+    {
+      "task_id": "long_horizon_clear_then_stack_block2_on_block3",
+      "instruction": "move block_4 away, then stack block_2 on block_3",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_2", "target": "block_3"}],
+      "moved_object": "block_2",
+      "support_object": "block_3",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "long_horizon_ordering",
+      "candidate_types": ["correct_order_bt", "wrong_order_bt", "missing_clear_bt", "redundant_repair_bt", "wrong_support_bt", "unsafe_or_invalid_bt"],
+      "plan_steps": [
+        {"moved_object": "block_4", "support_object": "block_6", "placement": {"strategy": "clear_blocker", "target_xy_offset_ratio": [0.0, 0.0]}},
+        {"moved_object": "block_2", "support_object": "block_3", "placement": {"strategy": "final_stack_center", "target_xy_offset_ratio": [0.0, 0.0]}}
+      ],
+      "notes": "Tests whether selectors can prefer correct ordering over reversed, missing, redundant, and invalid long-horizon BTs."
+    },
+    {
+      "task_id": "long_horizon_prepare_then_stack_block1_on_block3",
+      "instruction": "move block_2 away, then stack block_1 on block_3",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_1", "target": "block_3"}],
+      "moved_object": "block_1",
+      "support_object": "block_3",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "long_horizon_ordering",
+      "candidate_types": ["correct_order_bt", "wrong_order_bt", "missing_clear_bt", "redundant_repair_bt", "wrong_support_bt", "unsafe_or_invalid_bt"],
+      "plan_steps": [
+        {"moved_object": "block_2", "support_object": "block_6", "placement": {"strategy": "prepare_workspace", "target_xy_offset_ratio": [0.0, 0.0]}},
+        {"moved_object": "block_1", "support_object": "block_3", "placement": {"strategy": "final_stack_center", "target_xy_offset_ratio": [0.0, 0.0]}}
+      ],
+      "notes": "A second ordering probe with different moved and blocker objects."
+    },
+    {
+      "task_id": "constrained_support_block3_on_block1",
+      "instruction": "place block_3 on block_1 while avoiding unstable edge and contact-risk placement",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_3", "target": "block_1"}],
+      "moved_object": "block_3",
+      "support_object": "block_1",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "constrained_support_collision_risk",
+      "candidate_types": ["stable_center_bt", "narrow_edge_bt", "symbolic_edge_bt", "collision_risk_bt", "unstable_over_edge_bt", "far_offset_bt"],
+      "notes": "Candidates differ mainly in support stability and contact-risk placement offsets."
+    },
+    {
+      "task_id": "constrained_support_block1_on_block3",
+      "instruction": "place block_1 on block_3 while avoiding unstable edge and contact-risk placement",
+      "goal_type": "supported_by",
+      "target_predicates": [{"name": "supported_by", "source": "block_1", "target": "block_3"}],
+      "moved_object": "block_1",
+      "support_object": "block_3",
+      "priority": "v6_hard_cases",
+      "hard_case_family": "constrained_support_collision_risk",
+      "candidate_types": ["stable_center_bt", "narrow_edge_bt", "symbolic_edge_bt", "collision_risk_bt", "unstable_over_edge_bt", "far_offset_bt"],
+      "notes": "A second constrained-support probe with different moved object."
+    }
+  ]
+}

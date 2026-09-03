@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>End-to-End BT Selection Demo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f8fafc;
+      --fg: #172033;
+      --muted: #5d667a;
+      --panel: #ffffff;
+      --border: #d9dfeb;
+      --blue: #2563eb;
+      --green: #14843b;
+      --orange: #b45309;
+      --red: #b42318;
+      --code: #f1f5f9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10131a;
+        --fg: #e8ecf5;
+        --muted: #a9b1c2;
+        --panel: #171b24;
+        --border: #2a3140;
+        --blue: #7aa2ff;
+        --green: #6dd58c;
+        --orange: #f1b45a;
+        --red: #ff8a80;
+        --code: #202633;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.45;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 24px;
+    }
+    p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .value {
+      font-size: 18px;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .step {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 9px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      font-size: 13px;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tr.selected {
+      outline: 2px solid var(--green);
+      outline-offset: -2px;
+    }
+    tr.oracle td:first-child {
+      color: var(--blue);
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 11px;
+      margin: 4px 4px 0 0;
+      border: 1px solid var(--border);
+    }
+    .selected-tag {
+      color: var(--green);
+    }
+    .oracle-tag {
+      color: var(--blue);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .bt-tree, .bt-tree ul {
+      list-style: none;
+      padding-left: 18px;
+    }
+    .bt-tree li {
+      margin: 8px 0;
+      border-left: 2px solid var(--border);
+      padding-left: 10px;
+    }
+    .bt-tree span {
+      font-weight: 600;
+    }
+    .bt-detail {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    pre {
+      background: var(--code);
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+    code {
+      font-family: Consolas, Monaco, monospace;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+    @media (max-width: 860px) {
+      .grid, .flow, .split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>End-to-End Behavior Tree Selection Demo</h1>
+  <p>This page shows one complete chain: task definition, candidate BTs, KIOS scores, Isaac Gym scores, selector decision, and the command to execute the selected simulation job.</p>
+
+  <div class="flow">
+    <div class="step">Task definition</div>
+    <div class="step">Generate candidate BTs</div>
+    <div class="step">KIOS symbolic scoring</div>
+    <div class="step">Isaac Gym metrics</div>
+    <div class="step">Selector ranking</div>
+    <div class="step">Execute selected BT</div>
+  </div>
+
+  <h2>Task</h2>
+  <div class="grid">
+    <div class="card"><div class="label">Instruction</div><div class="value">place block_3 on block_5</div></div>
+    <div class="card"><div class="label">Initial state</div><div class="value">state_000_t0</div></div>
+    <div class="card"><div class="label">Target predicate</div><div class="value">supported_by(block_3, block_5)</div></div>
+    <div class="card"><div class="label">Selector</div><div class="value">feature_only</div></div>
+  </div>
+
+  <h2>Candidate Scores</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Type</th>
+          <th>KIOS success</th>
+          <th>Sim success</th>
+          <th>Goal</th>
+          <th>Preconditions</th>
+          <th>Final error</th>
+          <th>Displacement</th>
+          <th>Contact</th>
+          <th>Size</th>
+          <th>Depth</th>
+          <th>True score</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr class="selected oracle">
+              <td><strong>center_place_bt</strong><div class="tags"><span class='tag selected-tag'>selected</span><span class='tag oracle-tag'>oracle</span></div></td>
+              <td>center_place_bt</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.004</td>
+              <td>0.303</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>165.351</td>
+            </tr>
+            
+            <tr class="">
+              <td><strong>corner_place_bt</strong><div class="tags"></div></td>
+              <td>corner_place_bt</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.004</td>
+              <td>0.435</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>165.088</td>
+            </tr>
+            
+            <tr class="">
+              <td><strong>correct_bt</strong><div class="tags"></div></td>
+              <td>correct_bt</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.005</td>
+              <td>0.509</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>164.933</td>
+            </tr>
+            
+            <tr class="">
+              <td><strong>edge_place_bt</strong><div class="tags"></div></td>
+              <td>edge_place_bt</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.003</td>
+              <td>0.497</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>164.973</td>
+            </tr>
+            
+            <tr class="">
+              <td><strong>far_offset_bt</strong><div class="tags"></div></td>
+              <td>far_offset_bt</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.375</td>
+              <td>0.486</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>61.275</td>
+            </tr>
+            
+            <tr class="">
+              <td><strong>over_edge_bt</strong><div class="tags"></div></td>
+              <td>over_edge_bt</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1.000</td>
+              <td>1.000</td>
+              <td>0.377</td>
+              <td>0.542</td>
+              <td>1</td>
+              <td>6</td>
+              <td>3</td>
+              <td>61.150</td>
+            </tr>
+            
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Selected BT</h2>
+  <div class="grid">
+    <div class="card"><div class="label">Selected candidate</div><div class="value">center_place_bt</div></div>
+    <div class="card"><div class="label">Oracle candidate</div><div class="value">center_place_bt</div></div>
+    <div class="card"><div class="label">Selected score</div><div class="value">165.351</div></div>
+    <div class="card"><div class="label">Expected pickle</div><div class="value">/home/theshy/projects/datasets/bt_selection_benchmark_v2b_physical_strategy/state_000_t0/place_block3_on_block5/center_place_bt/demo_000001.pickle</div></div>
+  </div>
+
+  <div class="split">
+    <div class="card">
+      <h3>Behavior Tree Structure</h3>
+      <p>center_place_bt: place block_3 on block_5</p>
+      <ul class='bt-tree'><li><span>selector: selector: center_place_bt for place_block3_on_block5</span><ul><li><span>condition: condition: is_supported_by(block_3, block_5)</span><div class='bt-detail'>condition: block_3.is_supported_by=block_5</div></li><li><span>sequence: sequence: place(block_3, block_5)</span><ul><li><span>condition: condition: is_movable(block_3)</span><div class='bt-detail'>condition: block_3.is_movable=None</div></li><li><span>condition: condition: can_be_placed_on(block_3, block_5)</span><div class='bt-detail'>condition: block_3.can_be_placed_on=block_5</div></li><li><span>action: action: place(block_3, block_5)</span><div class='bt-detail'>effect: block_3.is_free=None</div><div class='bt-detail'>effect: block_3.is_supported_by=block_5</div><div class='bt-detail'>effect: block_3.is_above=block_5</div></li></ul></li></ul></li></ul>
+    </div>
+    <div class="card">
+      <h3>Selected Isaac Gym Job</h3>
+      <p>Config: <code>experiments/bt_selection_benchmark/simulation_jobs_v2b_physical_strategy/state_000_t0/place_block3_on_block5/center_place_bt/cupboard_candidate.yaml</code></p>
+      <pre><code>deactivate 2&gt;/dev/null || true
+source /opt/ros/noetic/setup.bash
+source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash
+cd /home/theshy/projects/mycode/ll4ma_isaac/ll4ma_isaacgym/src/ll4ma_isaacgym/scripts
+python3 run_isaacgym.py --config cupboard_candidate.yaml --config_dir /home/theshy/projects/mycode/kios_baseline/experiments/bt_selection_benchmark/simulation_jobs_v2b_physical_strategy/state_000_t0/place_block3_on_block5/center_place_bt --n_envs 1 --n_demos 1 --data_root /home/theshy/projects/datasets/bt_selection_benchmark_v2b_physical_strategy/state_000_t0/place_block3_on_block5/center_place_bt --headless --no_render_graphics</code></pre>
+    </div>
+  </div>
+
+  <h2>How To Demo Live</h2>
+  <pre><code>cd /home/theshy/projects/mycode/kios_baseline
+python3 experiments/bt_selection_benchmark/generate_end_to_end_demo.py
+
+# In another terminal, keep ROS/MoveIt running:
+deactivate 2&gt;/dev/null || true
+source /opt/ros/noetic/setup.bash
+source /home/theshy/projects/mycode/ll4ma_catkin_ws/devel/setup.bash
+roslaunch moveit_interface iiwa_reflex_moveit_interface_service.launch
+
+# Then copy the selected Isaac Gym command from this page.</code></pre>
+</main>
+</body>
+</html>

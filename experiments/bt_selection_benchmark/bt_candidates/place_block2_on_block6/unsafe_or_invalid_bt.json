@@ -1,0 +1,56 @@
+{
+  "summary": "unsafe_or_invalid_bt: place block_2 on block_6",
+  "name": "selector: unsafe_or_invalid_bt for place_block2_on_block6",
+  "identifier": 4,
+  "type_name": "selector",
+  "children": [
+    {
+      "summary": "place sequence for block_2 on missing_support",
+      "name": "sequence: place(block_2, missing_support)",
+      "identifier": 3,
+      "type_name": "sequence",
+      "children": [
+        {
+          "summary": "block_2 precondition can_be_placed_on",
+          "name": "condition: can_be_placed_on(block_2, missing_support)",
+          "identifier": 1,
+          "type_name": "condition",
+          "conditions": [
+            {
+              "object_name": "block_2",
+              "property_name": "can_be_placed_on",
+              "property_value": "missing_support",
+              "status": true
+            }
+          ]
+        },
+        {
+          "summary": "place block_2 on missing_support",
+          "name": "action: place(block_2, missing_support)",
+          "identifier": 2,
+          "type_name": "action",
+          "effects": [
+            {
+              "object_name": "block_2",
+              "property_name": "is_free",
+              "property_value": null,
+              "status": false
+            },
+            {
+              "object_name": "block_2",
+              "property_name": "is_supported_by",
+              "property_value": "missing_support",
+              "status": true
+            },
+            {
+              "object_name": "block_2",
+              "property_name": "is_above",
+              "property_value": "missing_support",
+              "status": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

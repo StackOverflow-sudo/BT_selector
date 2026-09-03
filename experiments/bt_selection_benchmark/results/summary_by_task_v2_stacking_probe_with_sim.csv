@@ -1,0 +1,9 @@
+task_id,task_class,correct_done_count,correct_sim_success_rate,correct_mean_score,correct_mean_final_position_error,correct_mean_object_displacement_error,all_candidate_sim_success_rate,all_candidate_mean_score
+place_block1_on_block5,shelf_placement,5,1,164.709736,0.005985,0.615206,0.6,88.750674
+place_block2_on_block6,shelf_placement,5,1,165.112522,0.002991,0.428786,0.6,66.259943
+place_block3_on_block5,shelf_placement,5,1,164.8877,0.003107,0.540614,0.6,81.398972
+stack_block1_on_block3,stacking,5,0.2,84.145837,0.065743,0.598365,0.04,19.565523
+stack_block2_on_block1,stacking,5,0,64.252547,0.07328,0.507327,0,16.60602
+stack_block3_on_block1,stacking,5,0,64.003315,0.067792,0.659384,0,16.34763
+stack_block3_on_block2,stacking,5,0,64.05363,0.07831,0.581635,0,16.115437
+stack_block4_on_block1,stacking,5,0,64.193791,0.072555,0.540331,0,16.423637

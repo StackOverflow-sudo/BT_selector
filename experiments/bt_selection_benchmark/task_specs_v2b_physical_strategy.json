@@ -1,0 +1,68 @@
+{
+  "benchmark_name": "bt_selection_benchmark_v2b_physical_strategy",
+  "environment": "ll4ma_cupboard_blocks",
+  "description": "V2B candidate-selection benchmark. Candidate BTs share the same symbolic supported_by goal but use different physical placement targets, allowing simulation-aware scoring to disambiguate symbolically valid plans.",
+  "initial_state_policy": {
+    "type": "seeded_variations",
+    "planned_count_per_task": 5,
+    "notes": "Uses available LL4MA/Points2Plans pickle timesteps as initial symbolic worlds."
+  },
+  "tasks": [
+    {
+      "task_id": "place_block3_on_block5",
+      "instruction": "place block_3 on block_5",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_3", "target": "block_5"}
+      ],
+      "moved_object": "block_3",
+      "support_object": "block_5",
+      "priority": "v2b_physical_strategy",
+      "notes": "Stable shelf-placement reference with multiple physical placement offsets."
+    },
+    {
+      "task_id": "place_block1_on_block5",
+      "instruction": "place block_1 on block_5",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_1", "target": "block_5"}
+      ],
+      "moved_object": "block_1",
+      "support_object": "block_5",
+      "priority": "v2b_physical_strategy",
+      "notes": "Stable shelf-placement reference with a different moved object."
+    },
+    {
+      "task_id": "stack_block1_on_block3",
+      "instruction": "stack block_1 on block_3",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_1", "target": "block_3"}
+      ],
+      "moved_object": "block_1",
+      "support_object": "block_3",
+      "priority": "v2b_physical_strategy",
+      "notes": "Only V2A stacking pair with non-zero center-placement success."
+    },
+    {
+      "task_id": "stack_block3_on_block1",
+      "instruction": "stack block_3 on block_1",
+      "goal_type": "supported_by",
+      "target_predicates": [
+        {"name": "supported_by", "source": "block_3", "target": "block_1"}
+      ],
+      "moved_object": "block_3",
+      "support_object": "block_1",
+      "priority": "v2b_physical_strategy",
+      "notes": "Known difficult stacking pair from V1 and V2A."
+    }
+  ],
+  "candidate_types": [
+    "correct_bt",
+    "center_place_bt",
+    "edge_place_bt",
+    "corner_place_bt",
+    "over_edge_bt",
+    "far_offset_bt"
+  ]
+}

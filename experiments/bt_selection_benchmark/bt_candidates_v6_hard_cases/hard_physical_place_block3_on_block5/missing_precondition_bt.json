@@ -1,0 +1,70 @@
+{
+  "summary": "missing_precondition_bt: place block_3 on block_5 with physically stable placement",
+  "name": "selector: missing_precondition_bt for hard_physical_place_block3_on_block5",
+  "identifier": 5,
+  "type_name": "selector",
+  "children": [
+    {
+      "summary": "target is already satisfied",
+      "name": "condition: is_supported_by(block_3, block_5)",
+      "identifier": 3,
+      "type_name": "condition",
+      "conditions": [
+        {
+          "object_name": "block_3",
+          "property_name": "is_supported_by",
+          "property_value": "block_5",
+          "status": true
+        }
+      ]
+    },
+    {
+      "summary": "place sequence for block_3 on block_5",
+      "name": "sequence: place(block_3, block_5)",
+      "identifier": 4,
+      "type_name": "sequence",
+      "children": [
+        {
+          "summary": "block_3 precondition is_movable",
+          "name": "condition: is_movable(block_3)",
+          "identifier": 1,
+          "type_name": "condition",
+          "conditions": [
+            {
+              "object_name": "block_3",
+              "property_name": "is_movable",
+              "property_value": null,
+              "status": true
+            }
+          ]
+        },
+        {
+          "summary": "place block_3 on block_5",
+          "name": "action: place(block_3, block_5)",
+          "identifier": 2,
+          "type_name": "action",
+          "effects": [
+            {
+              "object_name": "block_3",
+              "property_name": "is_free",
+              "property_value": null,
+              "status": false
+            },
+            {
+              "object_name": "block_3",
+              "property_name": "is_supported_by",
+              "property_value": "block_5",
+              "status": true
+            },
+            {
+              "object_name": "block_3",
+              "property_name": "is_above",
+              "property_value": "block_5",
+              "status": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

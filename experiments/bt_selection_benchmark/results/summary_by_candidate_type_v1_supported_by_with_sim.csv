@@ -1,0 +1,7 @@
+candidate_type,count,done_count,skipped_count,symbolic_success_rate,sim_success_rate,mean_score,mean_final_position_error,mean_object_displacement_error,contact_violation_rate
+correct_bt,20,20,0,1,0.8,144.641595,0.021385,0.572278,1
+missing_precondition_bt,20,20,0,1,0.75,130.097921,0.024841,0.576832,1
+redundant_bt,20,20,0,1,0.75,138.642819,0.021073,0.573227,1
+unsafe_or_invalid_bt,20,0,20,0.25,,-13.0,,,
+wrong_object_bt,20,20,0,0.25,0,-13.972401,0.62818,0.595299,1
+wrong_support_bt,20,20,0,0.25,0,-2.489828,0.484089,0.574471,1

@@ -1,0 +1,7 @@
+candidate_type,count,sim_success_rate,mean_score,mean_final_position_error,mean_object_displacement_error,contact_violation_rate
+center_place_bt,20,0.5,114.3829,0.04294,0.59385,1
+corner_place_bt,20,0.5,114.374978,0.042612,0.599453,1
+correct_bt,20,0.5,114.396726,0.039556,0.603859,1
+edge_place_bt,20,0.5,114.350499,0.044589,0.601807,1
+far_offset_bt,20,0,62.130717,0.263686,0.616211,1
+over_edge_bt,20,0.05,67.466989,0.228217,0.62542,1

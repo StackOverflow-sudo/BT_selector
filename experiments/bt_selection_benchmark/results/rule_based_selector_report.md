@@ -1,0 +1,79 @@
+# Rule-Based Selector Report
+
+Generated: 2026-08-12 03:38:45
+
+## Inputs
+
+- Selector baseline summary: `\\wsl.localhost\Ubuntu-20.04\home\theshy\projects\mycode\kios_baseline\experiments\bt_selection_benchmark\results\summary_by_selector.csv`
+- Rule-based summary: `\\wsl.localhost\Ubuntu-20.04\home\theshy\projects\mycode\kios_baseline\experiments\bt_selection_benchmark\results\rule_based_selector_summary.csv`
+- Rule-based choices: `\\wsl.localhost\Ubuntu-20.04\home\theshy\projects\mycode\kios_baseline\experiments\bt_selection_benchmark\results\rule_based_selector_choices.csv`
+
+## Method
+
+The selector ranks candidate behavior trees for the same task and initial state. The symbolic version uses BT structure and KIOS execution metrics; the simulation-aware version adds available LL4MA/Isaac Gym metrics.
+
+Symbolic score:
+
+```text
+50 * symbolic_success
++ 20 * goal_satisfaction
++ 15 * precondition_coverage
+- 10 * invalid_action_count
+- 5  * condition_failure_count
+- 0.5 * tree_size
+- 0.3 * tree_depth
+- 0.2 * bt_ticks
+- 0.5 * action_count
+```
+
+Simulation-aware additions:
+
+```text
++ 100 * sim_success
+- 10 * final_position_error
+- 5  * object_displacement_error
+- 10 * contact_violation_proxy
+```
+
+## Existing Selector Baselines
+
+| Selector | Groups | Success | Goal satisfaction | Mean selected score | Mean regret |
+| --- | --- | --- | --- | --- | --- |
+| random_expected | 15 | 61.1% | 0.667 | 26.472 | 39.528 |
+| first_candidate | 15 | 100.0% | 1.000 | 66.000 | 0.000 |
+| shortest_tree | 15 | 0.0% | 0.333 | -25.333 | 91.333 |
+| symbolic_success | 15 | 100.0% | 1.000 | 56.500 | 9.500 |
+| rule_based | 15 | 100.0% | 1.000 | 66.000 | 0.000 |
+| oracle | 15 | 100.0% | 1.000 | 66.000 | 0.000 |
+
+## Proposed Rule-Based Selectors
+
+| Selector | Groups | Symbolic success | Simulation success | Goal satisfaction | Model score | True score | Regret |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| rule_based_symbolic | 15 | 100.0% | N/A | 1.000 | 79.867 | 66.000 | 0.000 |
+| rule_based_simulation | 15 | 100.0% | N/A | 1.000 | 79.867 | 66.000 | 0.000 |
+
+## Choice Preview
+
+| Selector | Task | Initial state | Selected | Oracle | Regret |
+| --- | --- | --- | --- | --- | --- |
+| rule_based_symbolic | place_block3_on_block5 | state_000_t0 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block1_on_block5 | state_000_t0 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block2_on_block6 | state_000_t0 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block3_on_block5 | state_001_t1 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block1_on_block5 | state_001_t1 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block2_on_block6 | state_001_t1 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block3_on_block5 | state_002_t2 | correct_bt | correct_bt | 0.0 |
+| rule_based_symbolic | place_block1_on_block5 | state_002_t2 | correct_bt | correct_bt | 0.0 |
+
+## Interpretation
+
+- The symbolic rule-based selector improves over uniform random selection by 38.9% symbolic success.
+- The shortest-tree heuristic performs poorly in this benchmark (0.0% success), showing that smaller BTs are not necessarily reliable.
+- Compared with selecting any symbolically successful BT, the weighted selector reduces mean regret by 9.500.
+- The current rule-based selector matches the oracle upper bound on this V0 symbolic benchmark, with mean regret 0.000.
+- Simulation-aware scoring is implemented, but current `sim_success` fields are not populated, so the simulation-aware selector is not yet distinguishable from symbolic scoring.
+
+## Next Step
+
+Populate simulation metrics and add harder constrained-packing/retrieval tasks so that symbolic and simulation-aware scoring can be compared meaningfully.

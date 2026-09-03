@@ -1,0 +1,51 @@
+# basics
+numpy
+websockets
+tabulate
+python-dotenv
+
+# behavior tree
+py_trees==2.2.3
+
+# special pydot version
+pydot==1.4.1
+
+# pddl classical planning
+# unified-planning
+# unified-planning[engines] # for solving the pddl problems
+
+# graph modules
+networkx
+neo4j
+graphviz
+
+# openai
+openai # you may need to upgrade this after installing it
+# * see openai api change log for more info 
+# tiktoken
+# cohere
+langchain
+langchain-openai
+langgraph==0.0.24
+
+# semantic-router
+semantic-router
+
+# robotics 
+roboticstoolbox-python
+
+# vision
+# opencv-python
+# pyrealsense2
+
+# LLAMA
+# torch
+# fairscale
+# fire
+# sentencepiece
+
+# scene
+pymongo
+
+# others
+termcolor

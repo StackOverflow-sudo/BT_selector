@@ -1,0 +1,7 @@
+selector,group_count,selected_success_rate,selected_goal_satisfaction,mean_selected_score,mean_oracle_score,mean_regret,oracle_success_rate,notes
+random_expected,3,0.5,0.5,61.774278,165.159815,103.385537,1,Expected value over uniform random candidate selection.
+first_candidate,3,1.0,1.0,165.159815,165.159815,0.0,1.0,Choose the first candidate in the CSV order.
+shortest_tree,3,0.0,0.0,-32.0,165.159815,197.159815,1.0,Choose the smallest BT by tree_size.
+symbolic_success,3,1.0,1.0,155.83332,165.159815,9.326495,1.0,Prefer candidates that passed symbolic evaluation.
+rule_based,3,1.0,1.0,165.159815,165.159815,0.0,1.0,Weighted symbolic metrics without using oracle score directly.
+oracle,3,1.0,1.0,165.159815,165.159815,0.0,1.0,Upper bound using the true evaluated score.

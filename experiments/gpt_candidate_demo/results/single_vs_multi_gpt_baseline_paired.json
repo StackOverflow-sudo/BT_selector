@@ -1,0 +1,18 @@
+{
+  "paired_runs": 30,
+  "symbolic_success_multi_wins": 3,
+  "symbolic_success_single_wins": 2,
+  "symbolic_success_ties": 25,
+  "goal_satisfaction_multi_wins": 3,
+  "goal_satisfaction_single_wins": 2,
+  "goal_satisfaction_ties": 25,
+  "selected_score_multi_wins": 29,
+  "selected_score_single_wins": 0,
+  "selected_score_ties": 0,
+  "physical_feasibility_score_multi_wins": 0,
+  "physical_feasibility_score_single_wins": 10,
+  "physical_feasibility_score_ties": 19,
+  "true_score_multi_wins": 14,
+  "true_score_single_wins": 10,
+  "true_score_ties": 5
+}

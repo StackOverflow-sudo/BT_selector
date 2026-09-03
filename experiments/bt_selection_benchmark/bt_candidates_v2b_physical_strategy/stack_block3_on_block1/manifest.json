@@ -1,0 +1,35 @@
+{
+  "task_id": "stack_block3_on_block1",
+  "candidates": [
+    {
+      "candidate_id": "correct_bt",
+      "candidate_type": "correct_bt",
+      "bt_path": "correct_bt.json"
+    },
+    {
+      "candidate_id": "center_place_bt",
+      "candidate_type": "center_place_bt",
+      "bt_path": "center_place_bt.json"
+    },
+    {
+      "candidate_id": "edge_place_bt",
+      "candidate_type": "edge_place_bt",
+      "bt_path": "edge_place_bt.json"
+    },
+    {
+      "candidate_id": "corner_place_bt",
+      "candidate_type": "corner_place_bt",
+      "bt_path": "corner_place_bt.json"
+    },
+    {
+      "candidate_id": "over_edge_bt",
+      "candidate_type": "over_edge_bt",
+      "bt_path": "over_edge_bt.json"
+    },
+    {
+      "candidate_id": "far_offset_bt",
+      "candidate_type": "far_offset_bt",
+      "bt_path": "far_offset_bt.json"
+    }
+  ]
+}
