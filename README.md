@@ -16,6 +16,12 @@ For each task and initial world state, the system:
 
 The principal contribution is a simulation-grounded selection framework combining interpretable symbolic and physical evidence with feature and Transformer rankers. Oracle information defines supervision and evaluation upper bounds only; it is not an input to the deployed selector.
 
+### External resources and original contribution
+
+This project extends the existing [KIOS codebase](https://github.com/ProNeverFake/kios) and uses NVIDIA Isaac Gym, the LL4MA Isaac Gym integration, PyTorch, `py_trees`, scikit-learn, and the OpenAI API. These systems provide the symbolic-execution, simulation, machine-learning, and language-model infrastructure.
+
+The original work in this repository comprises the multi-candidate BT benchmark, candidate perturbation families, simulation-job generation, feature and Transformer ranking models, manual and learned V5 selectors, strict group- and source-aware evaluation, ablation and bootstrap analyses, GPT multi-candidate integration, and the browser demonstration. The repository is maintained as a private academic submission unless public release is expressly permitted by the relevant module lead.
+
 ## 2. Method
 
 ```mermaid
@@ -140,6 +146,10 @@ experiments/gpt_candidate_demo/models/online_v5/metadata.json
 
 Vocabulary, normalisation, and model parameters are fitted on the training partition for held-out evaluation. `true_score` and Oracle choices are used for training targets or final evaluation only.
 
+### Data availability
+
+The repository includes the 87 canonical CSV files used for the reported benchmark, selector, ablation, strict-holdout, and GPT-pilot analyses. Large Isaac Gym pickle files, generated simulation-job directories, raw per-call GPT outputs, and runtime logs are intentionally excluded. They are intermediate artefacts rather than the authoritative reporting tables and can be regenerated with the scripts in Section 7. No API keys or machine-specific environment files are included.
+
 ## 6. Quick Start
 
 This path uses existing candidates and saved rankers. It does not call the OpenAI API or launch Isaac Gym.
@@ -243,22 +253,27 @@ API limits and malformed responses must be reported as generation failures rathe
 
 ## 8. Results
 
-### Held-out V6 hard-case evaluation
+### Strict held-out V6 hard-case evaluation
 
-Higher success, selected true score, pairwise accuracy, and ROC-AUC are better; lower regret is better.
+The final external evaluation fits all preprocessing and learned models on the 80 V1-V2B development groups and evaluates them on 30 V6 hard-case groups. Higher success, selected true score, pairwise accuracy, and ROC-AUC are better; lower regret is better.
 
-| Selector | Success | Mean selected true score | Mean regret | Pairwise accuracy | ROC-AUC |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `feature_only` | 40.0% | 93.130 | 3.256 | 86.7% | 0.926 |
-| `transformer_only` | 33.3% | 86.456 | 9.930 | 86.0% | 0.916 |
-| `transformer_fused` | 40.0% | 92.937 | 3.449 | 88.9% | 0.936 |
-| `manual_v5` | 40.0% | 93.151 | 3.235 | - | - |
-| `v5_learned_full` | **43.3%** | **96.337** | **0.049** | **89.3%** | **0.938** |
-| `oracle` | 43.3% | 96.386 | 0.000 | - | - |
+| Selector | Operating mode | Success | Mean selected true score | Mean regret | Pairwise accuracy | ROC-AUC |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| `feature_only` | Pre-simulation | 40.0% | 93.167 | 3.219 | - | - |
+| `transformer_only` | Pre-simulation | 36.7% | 89.809 | 6.576 | - | - |
+| `transformer_fused` | Pre-simulation | 40.0% | 93.138 | 3.248 | - | - |
+| `symbolic_only` | Pre-simulation | 33.3% | 86.435 | 9.951 | - | - |
+| `shortest_tree` | Pre-simulation | 33.3% | 86.435 | 9.951 | - | - |
+| `v5_strict_no_simulation` | Pre-simulation | 40.0% | 93.112 | 3.274 | 62.4% | 0.704 |
+| `manual_v5` | Post-simulation | 40.0% | 93.204 | 3.182 | - | - |
+| `v5_strict_simulation_reranker` | Post-simulation | **43.3%** | **96.352** | **0.034** | **90.7%** | **0.942** |
+| `oracle` | Evaluation upper bound | 43.3% | 96.386 | 0.000 | - | - |
 
-Learned V5 remained close to Oracle on 30 held-out hard-case groups. It matched Oracle success on this split and achieved mean regret `0.049`. This indicates effective selection when the candidate set contains a strong BT; it does not imply that every task is solvable. Remaining failures are mainly limited by candidate availability.
+Before candidate-specific simulation is available, strict V5 is comparable to the strong feature-only baseline and does not establish a pre-simulation advantage. After candidate rollouts become available, learned V5 acts as a simulation-aware reranker: it matches the Oracle success count and reduces mean regret to `0.034`. The remaining gap is therefore dominated by candidate availability rather than top-1 selection.
 
-Removing simulation reliability increased held-out regret from `0.049` to `3.298`. Removing Transformer votes increased it to `0.123`. Symbolic and physical priors are therefore strong at the current data scale, while the Transformer provides complementary structural evidence.
+The strict ablation supports this interpretation. Removing simulation reliability increases regret from `0.034` to `3.274`; removing Transformer votes increases it to `0.147`; and removing the aggregate symbolic-reliability term leaves top-1 regret unchanged on this split. The Transformer is consequently interpreted as complementary structural evidence rather than the sole source of performance.
+
+Across all 110 groups, 56 contain at least one simulation-successful candidate and learned post-simulation V5 selects a successful BT in all 56. This conditional selection result does not imply that the framework solves groups for which candidate generation supplies no successful tree.
 
 ### GPT single- versus multi-candidate pilot
 
@@ -267,12 +282,14 @@ Removing simulation reliability increased held-out regret from `0.049` to `3.298
 | Single BT | 30 | 29 | 29 | 27/30 | 4 |
 | Four BTs plus selection | 30 | 30 | 120 | 28/30 | 10 |
 
-This pilot demonstrates the complete language-to-BT-to-selection workflow. API limits, schema failures, and incomplete physical coverage make it a feasibility study rather than the primary quantitative comparison.
+This pilot demonstrates the complete language-to-BT-to-selection workflow. API limits, schema failures, and incomplete physical coverage make it an end-to-end feasibility study rather than the primary quantitative comparison.
 
-Main reports:
+Main reports and authoritative result tables:
 
 ```text
-experiments/bt_selection_benchmark/results/v5_ensemble_selector_report.md
+experiments/bt_selection_benchmark/results/v6_strict_holdout_audit.md
+experiments/bt_selection_benchmark/results/v6_strict_holdout_summary.csv
+experiments/bt_selection_benchmark/results/v6_strict_holdout_choices.csv
 experiments/bt_selection_benchmark/results/v5_learned_ensemble_report.md
 experiments/bt_selection_benchmark/results/final_visualizations/final_results_report.md
 experiments/bt_selection_benchmark/results/final_visualizations/enhanced_visualization_report.md
